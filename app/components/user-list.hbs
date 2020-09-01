@@ -10,7 +10,7 @@
         <th>createdAt</th>
    </tr>
  
-        {{#each this.sortedUsers as |user|}}
+        {{#each @users as |user|}}
             <User @user={{user}}/>
         {{/each}}
 

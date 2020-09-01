@@ -1,4 +1,4 @@
-import Model, {attr} from '@ember-data/model';
+import Model, { attr } from '@ember-data/model';
 
 export default Model.extend({
     userName: attr('string'),
@@ -8,5 +8,5 @@ export default Model.extend({
     firstName: attr('string'),
     lastName: attr('string'),
     createdAt: attr('date'),
-    updatedAt: attr('date')
+    updatedAt: attr('date'),
 });

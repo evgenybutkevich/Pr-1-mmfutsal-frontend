@@ -126,12 +126,12 @@ p {
 }
 
 .rentals input {
-  padding: 11px;
-  font-size: 18px;
-  width: 500px;
-  margin: 20px auto 50px;
+  padding: 5px;
+  font-size: 12px;
+  width: 300px;
+  margin: 20px 50px;
   background-color: rgba(255, 255, 255, 0.75);
-  border: solid 1px lightgray;
+  border: solid 1px rgb(0, 0, 0);
   display: block;
 }
 
@@ -462,4 +462,17 @@ p {
   clip: rect(0 0 0 0);
   height: 1px; width: 1px;
   margin: -1px; padding: 0; border: 0;
+}
+
+
+
+
+
+
+table {
+    border-collapse: collapse;
+}
+
+table, tr, td, th {
+    border: 1px solid black;
 }
