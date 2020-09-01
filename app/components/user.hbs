@@ -1,30 +1,15 @@
-<article class="rental">
+    <tr>  
+        <td>{{@user.id}}</td>
 
-    <div class="details">
+        <td>{{@user.userName}}</td>
 
-        <h3>ID {{@user.id}}</h3>
-        <h3>userName: {{@user.userName}}</h3>
+        <td>{{@user.firstName}}</td>
 
-        <div class="detail firstName">
-            <span>firstName:</span> {{@user.firstName}}
-        </div>
+        <td>{{@user.lastName}}</td>
 
-        <div class="detail lastName">
-            <span>lastName:</span> {{@user.lastName}}
-        </div>
+        <td>{{@user.email}}</td>
 
-        <div class="detail email">
-            <span>email:</span> {{@user.email}}
-        </div>
-
-        <div class="detail telephone">
-            <span>telephone:</span> {{@user.telephone}}
-        </div>
-
-        <div class="detail createdAt">
-            <span>createdAt:</span> {{@user.createdAt}}
-        </div>
-
-    </div>
-
-</article>
+        <td>{{@user.telephone}}</td>
+        
+        <td>{{@user.createdAt}}</td>
+    </tr>

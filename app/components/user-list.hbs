@@ -1,5 +1,17 @@
-<ul class="results">
-    {{#each @users as |user|}}
-        <li><User @user={{user}}/></li>
-    {{/each}}
-</ul>
+<table>
+
+    <tr>
+        <th>id</th>
+        <th>userName</th>
+        <th>firstName</th>
+        <th>lastName</th>
+        <th>email</th>
+        <th>telephone</th>
+        <th>createdAt</th>
+   </tr>
+ 
+        {{#each this.sortedUsers as |user|}}
+            <User @user={{user}}/>
+        {{/each}}
+
+</table>
