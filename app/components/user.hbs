@@ -1,15 +1,9 @@
-    <tr>  
-        <td>{{@user.id}}</td>
-
-        <td>{{@user.userName}}</td>
-
-        <td>{{@user.firstName}}</td>
-
-        <td>{{@user.lastName}}</td>
-
-        <td>{{@user.email}}</td>
-
-        <td>{{@user.telephone}}</td>
-        
-        <td>{{@user.createdAt}}</td>
-    </tr>
+<tr>
+    <td><LinkTo @route="userUpdate" @model={{@user.id}}>{{@user.id}}</LinkTo></td>
+    <td>{{@user.userName}}</td>
+    <td>{{@user.firstName}}</td>
+    <td>{{@user.lastName}}</td>
+    <td>{{@user.email}}</td>
+    <td>{{@user.telephone}}</td>    
+    <td>{{@user.createdAt}}</td>
+</tr>

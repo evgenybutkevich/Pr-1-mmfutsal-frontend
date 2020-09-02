@@ -10,4 +10,6 @@ Router.map(function() {
     this.route('about');
     this.route('contacts');
     this.route('users');
+    this.route('userCreate', { path: '/users/create' });
+    this.route('userUpdate', { path: '/users/:id' });
 });

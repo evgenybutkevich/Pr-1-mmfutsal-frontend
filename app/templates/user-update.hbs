@@ -1,0 +1,35 @@
+<div>
+
+    <div>
+        <label for="userName">User name:</label>
+        {{input id="userName" placeholder="User name" value=model.userName}}
+    </div>
+
+    <div>
+        <label for="firstName">First name:</label>
+        {{input id="firstName" placeholder="First name" value=model.firstName}}
+    </div>
+
+    <div>
+        <label for="lastName">Last name:</label>
+        {{input id="lastName" placeholder="Last name" value=model.lastName}}
+    </div>
+
+    <div>
+        <label for="email">Email:</label>
+        {{input id="email" placeholder="Email" value=model.email}}
+    </div>
+
+    <div>
+        <label for="telephone">Telephone:</label>
+        {{input id="telephone" placeholder="Telephone" value=model.telephone}}
+    </div>
+
+    {{!-- <div>
+        <label for="password">Password:</label>
+        {{input id="password" placeholder="Password" type="password" value=model.password}}
+    </div> --}}
+
+    <button {{action 'update'}}>Save</button>
+
+</div>

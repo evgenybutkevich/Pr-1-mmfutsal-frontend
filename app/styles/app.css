@@ -73,49 +73,6 @@ p {
   background: #f9f9f9;
   margin: 0 auto;
 }
-/**
- * Top Navigation
- */
-
-.menu {
-    height: 4em;
-    background-color: #128a02;
-}
-
-.menu h1 {
-    position: relative;
-    padding: 5px 0 0 8px;
-    color: #f9f9f9;
-    font-size: 1.8em;
-    font-style: italic;
-}
-
-.menu a,
-.menu .links {
-    display: inline-block;
-}
-
-.menu a {
-  text-decoration: none;
-  padding: 0 15px;
-  color: #fff;
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.menu a:hover,
-.menu a.active {
-  opacity: 1;
-}
-
-.menu .links {
-  padding: 0 21px;
-}
-
-.menu .links a {
-  position: relative;
-  bottom: 5px;
-}
 
 .rentals label span {
   font-size: 140%;
@@ -133,39 +90,6 @@ p {
   background-color: rgba(255, 255, 255, 0.75);
   border: solid 1px rgb(0, 0, 0);
   display: block;
-}
-
-.menu input:focus {
-  background-color: #f9f9f9;
-  outline: none;
-}
-
-.menu button {
-  margin-right: 15px;
-  position: relative;
-  top: -1px;
-  left: -5px;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-  background-color: #262626;
-  cursor: pointer;
-  opacity: 1;
-}
-
-.menu button:hover {
-  background-color: #111;
-  opacity: 1;
-}
-
-.menu .results {
-  display: none;
-  position: absolute;
-  width: 215px;
-  top: 54px;
-  left: 10px;
-  background-color: #f6f6f6;
-  border-right: 1px solid rgba(0, 0, 0, 0.05);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .results {
@@ -464,15 +388,107 @@ p {
   margin: -1px; padding: 0; border: 0;
 }
 
+/* ------------------------------BUTTON */
 
+button {
+    background-color: green;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 2px 50px;
+    opacity: 0.9;
+    padding: 5px 10px 5px;
+    text-decoration: none;
+    width: 421px;
+}
 
+button:hover {
+    color: yellow;
+    opacity: 1;
+}
 
+/* ------------------------------INPUT */
 
+input {
+    background-color: white;
+    border: solid 1px black;
+    border-radius: 5px;
+    color: black;
+    font-size: 20px;
+    margin: 3px;
+    opacity: 0.9;
+    padding: 5px 10px 5px;
+    width: 400px;
+
+}
+
+/* ------------------------------LABEL */
+
+label {
+    display: inline-block; 
+    font-size: 20px;
+    font-style: italic;
+    width: 200px;
+}
+
+/* ------------------------------NAV */
+
+nav {
+    background-color: green;
+    height: 4em;    
+}
+
+/* ------------------------------NAV .MENU */
+
+.top h1 {
+    color: white;
+    font-size: 1.8em;
+    font-style: italic;
+    padding: 5px 0 0 8px;
+    position: relative;
+}
+
+.top a,
+.top .top-links {
+    display: inline-block;
+}
+
+.top a {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 0 15px;
+    text-decoration: none;
+}
+
+.top h1:hover,
+.top a:hover,
+.top a.active {
+    color: yellow;
+}
+
+.top .top-links {
+    padding: 0 21px;
+}
+
+.top .top-links a {
+    bottom: 5px;
+    position: relative;
+}
+
+/* ------------------------------TABLE */
 
 table {
     border-collapse: collapse;
 }
 
-table, tr, td, th {
+table,
+th,
+tr,
+td {
     border: 1px solid black;
+    padding: 0.5em;
+    vertical-align: top;
 }
