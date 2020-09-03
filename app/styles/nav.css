@@ -1,0 +1,42 @@
+nav {
+    background-color: green;
+    height: 4em;    
+}
+
+/* TOP */
+
+.top h1 {
+    color: white;
+    font-size: 1.8em;
+    font-style: italic;
+    padding: 5px 0 0 8px;
+    position: relative;
+}
+
+.top a,
+.top .top-links {
+    display: inline-block;
+}
+
+.top a {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 0 15px;
+    text-decoration: none;
+}
+
+.top h1:hover,
+.top a:hover,
+.top a.active {
+    color: yellow;
+}
+
+.top .top-links {
+    padding: 0 21px;
+}
+
+.top .top-links a {
+    bottom: 5px;
+    position: relative;
+}

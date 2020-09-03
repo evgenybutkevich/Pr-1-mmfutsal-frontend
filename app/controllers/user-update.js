@@ -6,22 +6,32 @@ export default class UserUpdateController extends Controller {
     update() {
         const user = this.get('model');
 
-        user.validate()
-            .then(({ validations }) => {
-                if (validations.get('isValid')) {
-                    user.save()
-                        .then(() => {
-                            this.transitionToRoute('users');
-                        },() => {}
-                        );
-                }
-            });
+        user.save()
+            .then(() => {
+                this.transitionToRoute('users');
+            }, () => {}
+            );
     }
+
+        // user.validate()
+        //     .then(({ validations }) => {
+        //         if (validations.get('isValid')) {
+        //             user.save()
+        //                 .then(() => {
+        //                     this.transitionToRoute('users');
+        //                 },() => {}
+        //                 );
+        //         }
+        //     });
 
     @action
     delete(id) {
         const user = this.store.peekRecord('user', id);
         
-        user.destroyRecord();
+        user.destroyRecord()
+            .then(() => {
+                this.transitionToRoute('users');
+            }, () => {}
+            );
     }
 };

@@ -20,6 +20,10 @@ export default class UserCreateController extends Controller {
             password,
         });
 
-        user.save();
+        user.save()
+            .then(() => {
+                this.transitionToRoute('users');
+            }, () => {}
+            );
     }
 }

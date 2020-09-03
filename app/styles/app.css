@@ -1,5 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:300,300italic,400,700,700italic);
 
+@import './nav.css';
+@import './table.css';
+
 /**
  * Base Elements
  */
@@ -431,91 +434,4 @@ label {
     font-size: 20px;
     font-style: italic;
     width: 200px;
-}
-
-/* ------------------------------NAV */
-
-nav {
-    background-color: green;
-    height: 4em;    
-}
-
-/* ------------------------------NAV .MENU */
-
-.top h1 {
-    color: white;
-    font-size: 1.8em;
-    font-style: italic;
-    padding: 5px 0 0 8px;
-    position: relative;
-}
-
-.top a,
-.top .top-links {
-    display: inline-block;
-}
-
-.top a {
-    color: white;
-    font-size: 20px;
-    font-weight: bold;
-    padding: 0 15px;
-    text-decoration: none;
-}
-
-.top h1:hover,
-.top a:hover,
-.top a.active {
-    color: yellow;
-}
-
-.top .top-links {
-    padding: 0 21px;
-}
-
-.top .top-links a {
-    bottom: 5px;
-    position: relative;
-}
-
-/* ------------------------------TABLE */
-
-table {
-    border-collapse: collapse;
-}
-
-table,
-th,
-tr,
-td {
-    border: 1px solid black;
-    padding: 0.5em;
-    vertical-align: top;
-}
-
-table button {
-    background-color: green;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    font-size: 20px;
-    font-weight: bold;
-    margin: 2px;
-    opacity: 0.9;
-    /* padding: 5px 10px 5px; */
-    text-decoration: none;
-    width: 100px;
-}
-
-table button:hover,
-table button a:hover {
-    color: yellow;
-    opacity: 1;
-}
-
-table button a {
-    color: white;
-    font-size: 20px;
-    font-weight: bold;
-    text-decoration: none;
 }

@@ -30,7 +30,7 @@
         {{input id="password" placeholder="Password" type="password" value=model.password}}
     </div> --}}
 
-    <button {{action 'update'}}>Save</button>
-    <button {{action 'delete' @model.id}}>Delete</button>
+    <button {{on "click" this.update}}>Save</button>
+    <button {{on "click" (fn this.delete @model.id)}}>Delete</button>
 
 </div>
