@@ -11,5 +11,6 @@ Router.map(function() {
     this.route('contacts');
     this.route('users');
     this.route('userCreate', { path: '/users/create' });
-    this.route('userUpdate', { path: '/users/:id' });
+    this.route('userUpdate', { path: '/users/update/:id' });
+    this.route('userView', { path: '/users/view/:id' });
 });

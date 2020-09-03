@@ -1,0 +1,17 @@
+<table>
+    <tr>
+        <th>User ID</th>
+        <th>User name</th>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Email</th>
+        <th>Telephone</th>
+        <th></th>
+        {{!-- <th>createdAt</th> --}}
+   </tr>
+ 
+        {{#each @users as |user|}}
+            <User @user={{user}} @onDelete={{@onDelete}}/>
+        {{/each}}
+
+</table>

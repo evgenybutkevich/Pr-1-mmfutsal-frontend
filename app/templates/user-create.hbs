@@ -1,9 +1,12 @@
 <div>
-
     <div>
         <label for="userName">User name:</label>
         {{input id="userName" placeholder="User name" value=userName}}
     </div>
+
+    {{!-- <div class='error'>
+        {{v-get model valuePath 'message'}}
+    </div> --}}
 
     <div>
         <label for="firstName">First name:</label>
@@ -35,6 +38,6 @@
         {{input id="confirmPassword" placeholder="Confirm password" type="password" value=confirmPassword}}
     </div>
 
-    <button {{action 'create'}}>Sign up</button>
+    <button {{on "click" this.create}}>Sign up</button>
 
 </div>

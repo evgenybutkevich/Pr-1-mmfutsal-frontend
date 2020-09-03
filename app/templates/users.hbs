@@ -1,7 +1,5 @@
-<UserList @users={{model}}/>
+<UsersList @users={{model}} @onDelete={{this.delete}}/>
 
-<div style="margin-top: 20px">
-    {{input value=id placeholder="id"}}
-
-    <button {{action 'remove'}}>remove</button>
-</div>
+<button>
+    <LinkTo @route="userCreate">Create user</LinkTo>
+</button>

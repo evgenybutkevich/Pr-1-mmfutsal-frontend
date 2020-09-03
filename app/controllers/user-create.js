@@ -1,25 +1,25 @@
 import Controller from '@ember/controller';
+import { action } from '@ember/object';
 
-export default Controller.extend({
-    actions: {
-        create() {
-            const userName = this.get('userName');
-            const firstName = this.get('firstName');
-            const lastName = this.get('lastName');
-            const email = this.get('email');
-            const telephone = this.get('telephone');
-            const password = this.get('password');
+export default class UserCreateController extends Controller {
+    @action
+    create() {
+        const userName = this.get('userName');
+        const firstName = this.get('firstName');
+        const lastName = this.get('lastName');
+        const email = this.get('email');
+        const telephone = this.get('telephone');
+        const password = this.get('password');
 
-            const newUser = this.store.createRecord('user', {
-                userName,
-                firstName,
-                lastName,
-                email,
-                telephone,
-                password,
-            });
+        const user = this.store.createRecord('user', {
+            userName,
+            firstName,
+            lastName,
+            email,
+            telephone,
+            password,
+        });
 
-            newUser.save();
-        },
-    },
-});
+        user.save();
+    }
+}
