@@ -30,9 +30,9 @@ const Validations = buildValidations(
             description: 'Telephone',
             validators: [
                 validator('presence', true),
-                validator('format', {
-                    type: 'phone',
-                }),
+                // validator('format', {
+                //     type: 'phone',
+                // }),
             ],
         },
         password: {
