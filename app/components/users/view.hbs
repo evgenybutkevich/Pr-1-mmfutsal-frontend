@@ -1,0 +1,39 @@
+<div>
+    <label for="userName">User name:</label>
+    <span>{{@user.userName}}</span>
+</div>
+
+<div>
+    <label for="email">Email:</label>
+    <span>{{@user.email}}</span>
+</div>
+
+<div>
+    <label for="telephone">Telephone:</label>
+    <span>{{@user.telephone}}</span>
+</div>
+
+<div>
+    <label for="password">Password:</label>
+    {{input disabled="disabled" id="password" placeholder="Password" type="password" value=@user.password}}
+</div>
+
+<div>
+    <label for="confirmPassword">Confirm password:</label>
+    {{input disabled="disabled" id="confirmPassword" placeholder="Confirm password" type="password" value=@user.password}}
+</div>
+
+<div style="margin-top: 30px;">
+    <label for="firstName">First name:</label>
+    <span>{{@user.firstName}}</span>
+</div>
+
+<div>
+    <label for="lastName">Last name:</label>
+    <span>{{@user.lastName}}</span>
+</div>
+
+<button>
+    <LinkTo @route="users.update" @model={{@user.id}}>Update</LinkTo>
+</button>
+<button {{on "click" (fn @onDelete @user.id)}}>Delete</button>

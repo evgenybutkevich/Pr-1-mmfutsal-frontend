@@ -1,0 +1,14 @@
+<table>
+    <tr>
+        <th>User ID</th>
+        <th>First name</th>
+        <th>Last name</th>
+        {{!-- <th>createdAt</th> --}}
+        {{!-- <th>updatedAt</th> --}}
+        <th></th>  
+   </tr>
+ 
+    {{#each @players as |player|}}
+        <Players::Player @player={{player}} @onDelete={{@onDelete}}/>
+    {{/each}}
+</table>

@@ -6,48 +6,46 @@ const Validations = buildValidations(
         userName: {
             description: 'User name',
             validators: [
-                validator('presence', true),
                 validator('length', {
                     min: 5,
                     max: 30,
                 }),
+                validator('presence', true),
             ],
         },
         email: {
             description: 'Email',
             validators: [
-                validator('presence', true),
                 validator('format', {
                     type: 'email',
                 }),
+                validator('presence', true),
             ],
         },
-        emailConfirmation: validator('confirmation', {
-            on: 'email',
-            message: 'Email addresses do not match',
-        }),
         telephone: {
             description: 'Telephone',
             validators: [
+                validator('format', {
+                    regex: /^\+375 (?:25|29|33|44) (?=.*\d).{3}-(?=.*\d).{2}-(?=.*\d).{2}$/,
+                    message:
+                        '{description} does not match, must be +375 XX XXX-XX-XX',
+                }),
                 validator('presence', true),
-                // validator('format', {
-                //     type: 'phone',
-                // }),
             ],
         },
         password: {
             description: 'Password',
             validators: [
-                validator('presence', true),
-                validator('length', {
-                    min: 3,
-                    max: 15,
-                }),
                 validator('format', {
                     regex: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{3,15}$/,
                     message:
                         '{description} must include at least one upper case letter, one lower case letter, and a number',
                 }),
+                validator('length', {
+                    min: 3,
+                    max: 15,
+                }),
+                validator('presence', true),
             ],
         },
         firstName: {

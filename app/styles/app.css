@@ -1,11 +1,18 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:300,300italic,400,700,700italic);
 
-@import './nav.css';
-@import './table.css';
+@import './components/nav-bar.css';
+@import './components/users/user-input.css';
+@import './components/users/user-view.css';
 
-/**
- * Base Elements
- */
+@import './content/content.css';
+
+@import './content/error.css';
+@import './content/label.css';
+@import './content/input.css';
+@import './content/span.css';
+@import './content/table.css';
+@import './content/text.css';
+
 
 * {
   margin: 0;
@@ -19,18 +26,18 @@ h3,
 h4,
 h5,
 h6,
-p,
-div,
-span,
 a,
+p,
+label,
+input,
 button {
   font-family: 'Lato', 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif;
   line-height: 1.5;
 }
 
-body {
-  background: #f3f3f3;
-}
+
+/* 
+
 
 a {
   color: #016aba;
@@ -45,10 +52,6 @@ p {
   line-height: 1.5;
   margin-bottom: 15px;
 }
-
-/**
- * Button
- */
 
 .button {
   padding: 10px 30px 10px;
@@ -66,9 +69,6 @@ p {
 .button:hover {
   opacity: 1;
 }
-/**
- * Body Container
- */
 
 .container {
   max-width: 1024px;
@@ -107,16 +107,10 @@ p {
 .menu .results li:hover {
   background: #f3f3f3;
 }
-/**
- * Content Area
- */
 
 .body {
   padding: 15px;
 }
-/**
- * Similar to Jumbotron
- */
 
 .jumbo {
   padding: 50px;
@@ -143,10 +137,6 @@ p {
   top: -25px;
   right: -20px;
 }
-
-/**
- * Individual Rental Listing
- */
 
 .rental {
   margin-top: 15px;
@@ -220,8 +210,6 @@ p {
   margin-bottom: -15px;
   text-align: center;
   color: #016aba;
-
-  /* This is needed to fix a safari clipping issue */
   position: relative;
 }
 
@@ -348,10 +336,6 @@ p {
   }
 }
 
-/**
- * Utilities
- */
-
 .light {
   font-weight: 300;
 }
@@ -389,49 +373,4 @@ p {
   clip: rect(0 0 0 0);
   height: 1px; width: 1px;
   margin: -1px; padding: 0; border: 0;
-}
-
-/* ------------------------------BUTTON */
-
-button {
-    background-color: green;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    font-size: 20px;
-    font-weight: bold;
-    margin: 2px 50px;
-    opacity: 0.9;
-    padding: 5px 10px 5px;
-    text-decoration: none;
-    width: 421px;
-}
-
-button:hover {
-    color: yellow;
-    opacity: 1;
-}
-
-/* ------------------------------INPUT */
-
-input {
-    background-color: white;
-    border: solid 1px black;
-    border-radius: 5px;
-    color: black;
-    font-size: 20px;
-    margin: 3px;
-    opacity: 0.9;
-    padding: 5px 10px 5px;
-    width: 400px;
-
-}
-
-/* ------------------------------LABEL */
-
-label {
-    display: inline-block; 
-    font-size: 20px;
-    font-style: italic;
-    width: 200px;
-}
+} */

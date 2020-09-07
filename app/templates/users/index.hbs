@@ -1,0 +1,6 @@
+<div>
+    <h3 style="float: left;">USERS LIST, <LinkTo @route="users.create">Create new user</LinkTo></h3>
+</div>
+
+
+<Users::List @users={{model}} @onDelete={{this.delete}}/>

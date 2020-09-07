@@ -1,0 +1,8 @@
+.content-background {
+    background-color: lightgray;
+}
+
+.content-div {
+    margin: 0 auto;
+    max-width: 90%;
+}

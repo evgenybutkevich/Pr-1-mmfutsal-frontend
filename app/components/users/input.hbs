@@ -1,0 +1,60 @@
+<div>
+    <label for="userName">User name:</label>
+    {{input id="userName" placeholder="User name" value=@user.userName}}
+    <div class='error'>
+        {{v-get @user 'userName' 'message'}}
+    </div>
+</div>
+
+
+<div>
+    <label for="email">Email:</label>
+    {{input id="email" placeholder="Email" value=@user.email}}
+</div>
+<div class='error'>
+    {{v-get @user 'email' 'message'}}
+</div>
+
+<div>
+    <label for="telephone">Telephone:</label>
+    {{input id="telephone" placeholder="Telephone" value=@user.telephone}}
+</div>
+<div class='error'>
+    {{v-get @user 'telephone' 'message'}}
+</div>
+
+<div>
+    <label for="password">Password:</label>
+    {{input id="password" placeholder="Password" type="password" value=@user.password}}
+</div>
+<div class='error'>
+    {{v-get @user 'password' 'message'}}
+</div>
+
+<div>
+    <label for="confirmPassword">Confirm password:</label>
+    {{input id="confirmPassword" placeholder="Confirm password" type="password" value=@user.password}}
+</div>
+
+<div style="margin-top: 30px;">
+    <label for="firstName">First name:</label>
+    {{input id="firstName" placeholder="First name" value=@user.firstName}}
+</div>
+<div class='error'>
+    {{v-get @user 'firstName' 'message'}}
+</div>
+
+<div>
+    <label for="lastName">Last name:</label>
+    {{input id="lastName" placeholder="Last name" value=@user.lastName}}
+</div>
+<div class='error'>
+    {{v-get @user 'lastName' 'message'}}
+</div>
+
+{{#if @user.id}}
+    <button {{on "click" @onUpdate}}>Save</button>
+    <button {{on "click" (fn @onDelete @user.id)}}>Delete</button>
+{{else}}
+    <button {{on "click" @onCreate}}>Save</button>
+{{/if}}
