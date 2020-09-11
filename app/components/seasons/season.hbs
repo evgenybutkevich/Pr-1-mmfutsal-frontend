@@ -1,0 +1,20 @@
+<tr>
+    <td>{{@season.id}}</td>
+    <td>{{@season.seasonName}}</td>
+    <td>{{@season.startYear}}</td>
+    <td>{{@season.endYear}}</td>
+    {{!-- <td>{{@season.createdAt}}</td> --}}
+    {{!-- <td>{{@season.updatedAt}}</td> --}}
+
+    <td>
+        <button>
+            <LinkTo @route="seasons.view" @model={{@season.id}}>View</LinkTo>
+        </button>
+
+        <button>
+            <LinkTo @route="seasons.update" @model={{@season.id}}>Update</LinkTo>
+        </button>
+
+        <button {{on "click" (fn @onDelete @season.id)}}>Delete</button>
+    </td>
+</tr>

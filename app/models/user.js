@@ -51,21 +51,21 @@ const Validations = buildValidations(
         firstName: {
             description: 'First name',
             validators: [
-                validator('presence', true),
                 validator('length', {
                     min: 2,
                     max: 30,
                 }),
+                validator('presence', true),
             ],
         },
         lastName: {
             description: 'Last name',
             validators: [
-                validator('presence', true),
                 validator('length', {
                     min: 2,
                     max: 30,
                 }),
+                validator('presence', true),
             ],
         },
     },

@@ -1,4 +1,4 @@
-import Model, { attr } from '@ember-data/model';
+import Model, { attr, hasMany } from '@ember-data/model';
 import { validator, buildValidations } from 'ember-cp-validations';
 
 const Validations = buildValidations(
@@ -27,6 +27,9 @@ const Validations = buildValidations(
 );
 
 export default Model.extend(Validations, {
+    seasons: hasMany('season'),
+    teams: hasMany('team'),
+
     firstName: attr('string'),
     lastName: attr('string'),
     createdAt: attr('date'),

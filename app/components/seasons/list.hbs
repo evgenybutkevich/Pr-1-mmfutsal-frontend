@@ -1,0 +1,17 @@
+<table>
+    <tr>
+        <th>User ID</th>
+        <th>Season name</th>
+        <th>Start year</th>
+        <th>End year</th>
+        {{!-- <th>createdAt</th> --}}
+        {{!-- <th>updatedAt</th> --}}
+        <th></th>  
+   </tr>
+ 
+    {{#each @seasons as |season|}}
+        {{#if season.id}}
+            <Seasons::Season @season={{season}} @onDelete={{@onDelete}}/>
+        {{/if}}
+    {{/each}}
+</table>

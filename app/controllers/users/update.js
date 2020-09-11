@@ -9,11 +9,15 @@ export default class UpdateController extends Controller {
         user.validate()
             .then(({ validations }) => {
                 if (validations.get('isValid')) {
-                    user.save()
-                        .then(() => {
-                            this.transitionToRoute('users.index');
-                        }, () => {}
-                        );
+                    const conf = confirm('Are you sure?!');
+
+                    if (conf) {
+                        user.save()
+                            .then(() => {
+                                this.transitionToRoute('users.index');
+                            }, () => {}
+                            );
+                    }
                 }
             });
     }
@@ -22,10 +26,14 @@ export default class UpdateController extends Controller {
     delete(id) {
         const user = this.store.peekRecord('user', id);
         
-        user.destroyRecord()
-            .then(() => {
-                this.transitionToRoute('users.index');
-            }, () => {}
-            );
+        const conf = confirm('Are you sure?!');
+
+        if (conf) {
+            user.destroyRecord()
+                .then(() => {
+                    this.transitionToRoute('users.index');
+                }, () => {}
+                );
+        }
     }
 };

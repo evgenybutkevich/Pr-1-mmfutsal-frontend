@@ -9,11 +9,15 @@ export default class CreateController extends Controller {
         user.validate()
             .then(({ validations }) => {
                 if (validations.get('isValid')) {
-                    user.save()
-                        .then(() => {
-                            this.transitionToRoute('users.index');
-                        }, () => {}
-                        );
+                    const conf = confirm('Are you sure?!');
+
+                    if (conf) {
+                        user.save()
+                            .then(() => {
+                                this.transitionToRoute('users.index');
+                            }, () => {}
+                            );
+                    }
                 }
             });
     }

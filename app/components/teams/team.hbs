@@ -1,0 +1,18 @@
+<tr>
+    <td>{{@team.id}}</td>
+    <td>{{@team.teamName}}</td>
+    {{!-- <td>{{@team.createdAt}}</td> --}}
+    {{!-- <td>{{@team.updatedAt}}</td> --}}
+
+    <td>
+        <button>
+            <LinkTo @route="teams.view" @model={{@team.id}}>View</LinkTo>
+        </button>
+
+        <button>
+            <LinkTo @route="teams.update" @model={{@team.id}}>Update</LinkTo>
+        </button>
+
+        <button {{on "click" (fn @onDelete @team.id)}}>Delete</button>
+    </td>
+</tr>

@@ -1,0 +1,14 @@
+<div>
+    <label for="teamName">Team name:</label>
+    {{input id="teamName" placeholder="Team name" value=@team.teamName}}
+</div>
+<div class='error'>
+    {{v-get @team 'teamName' 'message'}}
+</div>
+
+{{#if @team.id}}
+    <button {{on "click" @onUpdate}}>Save</button>
+    <button {{on "click" (fn @onDelete @team.id)}}>Delete</button>
+{{else}}
+    <button {{on "click" @onCreate}}>Save</button>
+{{/if}}

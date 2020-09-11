@@ -6,10 +6,14 @@ export default class ViewController extends Controller {
     delete(id) {
         const player = this.store.peekRecord('player', id);
         
-        player.destroyRecord()
-            .then(() => {
-                this.transitionToRoute('players.index');
-            }, () => {}
-            );
+        const conf = confirm('Are you sure?!');
+
+        if (conf) {
+            player.destroyRecord()
+                .then(() => {
+                    this.transitionToRoute('players.index');
+                }, () => {}
+                );
+        }
     }
 };

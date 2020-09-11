@@ -6,6 +6,10 @@ export default class IndexController extends Controller {
     delete(id) {
         const user = this.store.peekRecord('user', id);
 
-        user.destroyRecord();
+        const conf = confirm('Are you sure?!');
+        
+        if(conf) {
+            user.destroyRecord();
+        }
     }
 };

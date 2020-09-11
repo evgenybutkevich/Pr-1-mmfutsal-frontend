@@ -9,6 +9,8 @@
    </tr>
  
     {{#each @players as |player|}}
-        <Players::Player @player={{player}} @onDelete={{@onDelete}}/>
+        {{#if player.id}}
+            <Players::Player @player={{player}} @onDelete={{@onDelete}}/>
+        {{/if}}
     {{/each}}
 </table>

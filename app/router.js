@@ -8,24 +8,35 @@ export default class Router extends EmberRouter {
 
 Router.map(function() {
     this.route('index', { path: ''});
-    this.route('players', { path: 'players'}, function() {
+
+    this.route('players', { path: '/players'}, function() {
         this.route('index', { path: ''});
-        this.route('create', { path: 'create' });
-        this.route('update', { path: 'update/:id' });
-        this.route('view', { path: 'view/:id' });
+        this.route('create', { path: '/create' });
+        this.route('update', { path: '/update/:id' });
+        this.route('view', { path: '/view/:id' });
     });
-    this.route('teams', { path: 'teams'}, function() {
+
+    this.route('seasons', { path: '/seasons'}, function() {
         this.route('index', { path: ''});
-        this.route('create', { path: 'create' });
-        this.route('update', { path: 'update/:id' });
-        this.route('view', { path: 'view/:id' });
+        this.route('create', { path: '/create' });
+        this.route('update', { path: '/update/:id' });
+        this.route('view', { path: '/view/:id' });
+    });  
+
+    this.route('teams', { path: '/teams'}, function() {
+        this.route('index', { path: ''});
+        this.route('create', { path: '/create' });
+        this.route('update', { path: '/update/:id' });
+        this.route('view', { path: '/view/:id' });
     });   
+
     this.route('users', { path: '/users'}, function() {
         this.route('index', { path: ''});
         this.route('create', { path: '/create' });
         this.route('update', { path: '/update/:id' });
         this.route('view', { path: '/view/:id' });
     });
+
     this.route('contacts');
     this.route('about');
 });

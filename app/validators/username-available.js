@@ -6,16 +6,16 @@ const UsernameAvailable = BaseValidator.extend({
 
     validate(value) {
         return this.get('store').query('user', {
-            filter: { userName: value }
+            filter: { userName: value },
         })
-            .then(function(result) {
+            .then((result) => {
                 if (result.get('length') === 0) {
                     return true;
-                } else {
-                    return "User name is already in use";
                 }
+
+                return 'User name is already in use';
             });
-    }
+    },
 });
 
 UsernameAvailable.reopenClass({
@@ -33,7 +33,7 @@ UsernameAvailable.reopenClass({
      */
     getDependentsFor(/* attribute, options */) {
         return [];
-    }
+    },
 });
 
 export default UsernameAvailable;

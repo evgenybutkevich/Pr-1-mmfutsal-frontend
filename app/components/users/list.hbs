@@ -12,6 +12,8 @@
    </tr>
  
     {{#each @users as |user|}}
-        <Users::User @user={{user}} @onDelete={{@onDelete}}/>
+        {{#if user.id}}
+            <Users::User @user={{user}} @onDelete={{@onDelete}}/>
+        {{/if}}
     {{/each}}
 </table>
