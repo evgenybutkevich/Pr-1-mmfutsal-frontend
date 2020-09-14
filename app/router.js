@@ -21,14 +21,14 @@ Router.map(function() {
         this.route('create', { path: '/create' });
         this.route('update', { path: '/update/:id' });
         this.route('view', { path: '/view/:id' });
-    });  
+    });
 
     this.route('teams', { path: '/teams'}, function() {
         this.route('index', { path: ''});
         this.route('create', { path: '/create' });
         this.route('update', { path: '/update/:id' });
         this.route('view', { path: '/view/:id' });
-    });   
+    });
 
     this.route('users', { path: '/users'}, function() {
         this.route('index', { path: ''});

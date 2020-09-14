@@ -4,7 +4,7 @@ import { validator, buildValidations } from 'ember-cp-validations';
 const Validations = buildValidations(
     {
         playerId: {
-            validators: [                
+            validators: [
                 validator('number', {
                     gt: 0,
                     integer: true,
@@ -14,7 +14,7 @@ const Validations = buildValidations(
             ],
         },
         teamId: {
-            validators: [                
+            validators: [
                 validator('number', {
                     gt: 0,
                     integer: true,
@@ -24,7 +24,7 @@ const Validations = buildValidations(
             ],
         },
         seasonId: {
-            validators: [                
+            validators: [
                 validator('number', {
                     gt: 0,
                     integer: true,

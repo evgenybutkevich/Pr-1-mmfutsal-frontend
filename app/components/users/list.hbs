@@ -8,9 +8,9 @@
         <th>Last name</th>
         {{!-- <th>createdAt</th> --}}
         {{!-- <th>updatedAt</th> --}}
-        <th></th>  
+        <th></th>
    </tr>
- 
+
     {{#each @users as |user|}}
         {{#if user.id}}
             <Users::User @user={{user}} @onDelete={{@onDelete}}/>

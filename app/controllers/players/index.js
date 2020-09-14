@@ -4,7 +4,7 @@ import Controller from '@ember/controller';
 export default class IndexController extends Controller {
     // @action
     // delete(id) {
-    //     if (!confirm('Are you sure?!')) { 
+    //     if (!confirm('Are you sure?!')) {
     //         return;
     //     }
 
@@ -12,4 +12,4 @@ export default class IndexController extends Controller {
 
     //     player.destroyRecord();
     // }
-};
+}

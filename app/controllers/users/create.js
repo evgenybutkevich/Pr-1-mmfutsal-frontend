@@ -12,7 +12,7 @@ export default class CreateController extends Controller {
                     if (!confirm('Are you sure?!')) {
                         return;
                     }
-                }                
+                }
             });
 
         user.save()

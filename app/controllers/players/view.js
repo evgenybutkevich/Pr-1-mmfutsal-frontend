@@ -16,4 +16,4 @@ export default class ViewController extends Controller {
     //         }, () => { }
     //         );
     // }
-};
+}

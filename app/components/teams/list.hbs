@@ -4,9 +4,9 @@
         <th>Team name</th>
         {{!-- <th>createdAt</th> --}}
         {{!-- <th>updatedAt</th> --}}
-        <th></th>  
+        <th></th>
    </tr>
- 
+
     {{#each @teams as |team|}}
         {{#if team.id}}
             <Teams::Team @team={{team}}/>

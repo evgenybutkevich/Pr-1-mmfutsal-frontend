@@ -4,7 +4,7 @@ import { validator, buildValidations } from 'ember-cp-validations';
 const Validations = buildValidations(
     {
         playerTeamSeasonId: {
-            validators: [                
+            validators: [
                 validator('number', {
                     gt: 0,
                     integer: true,
@@ -15,7 +15,7 @@ const Validations = buildValidations(
         },
         goals: {
             description: 'Goals',
-            validators: [                
+            validators: [
                 validator('number', {
                     integer: true,
                     positive: true,
@@ -25,7 +25,7 @@ const Validations = buildValidations(
         },
         yellowCards: {
             description: 'Yellow cards',
-            validators: [                
+            validators: [
                 validator('number', {
                     integer: true,
                     positive: true,
@@ -35,7 +35,7 @@ const Validations = buildValidations(
         },
         redCards: {
             description: 'Red cards',
-            validators: [                
+            validators: [
                 validator('number', {
                     integer: true,
                     positive: true,
@@ -45,7 +45,7 @@ const Validations = buildValidations(
         },
         gamesPlayed: {
             description: 'Games played',
-            validators: [                
+            validators: [
                 validator('number', {
                     integer: true,
                     positive: true,

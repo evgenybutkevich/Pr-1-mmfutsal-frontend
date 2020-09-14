@@ -6,9 +6,9 @@
         <th>End year</th>
         {{!-- <th>createdAt</th> --}}
         {{!-- <th>updatedAt</th> --}}
-        <th></th>  
+        <th></th>
    </tr>
- 
+
     {{#each @seasons as |season|}}
         {{#if season.id}}
             <Seasons::Season @season={{season}}/>

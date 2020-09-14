@@ -12,4 +12,4 @@ export default class IndexController extends Controller {
 
     //     team.destroyRecord();
     // }
-};
+}

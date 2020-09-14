@@ -14,7 +14,7 @@ export default class CreateController extends Controller {
                     }
                 }
             });
-            
+
         player.save()
             .then(() => {
                 this.transitionToRoute('players.index');

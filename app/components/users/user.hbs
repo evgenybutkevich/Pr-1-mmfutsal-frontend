@@ -9,14 +9,14 @@
     {{!-- <td>{{@user.updatedAt}}</td> --}}
 
     <td>
-            <button>
-                <LinkTo @route="users.view" @model={{@user.id}}>View</LinkTo>
-            </button>
+        <button>
+            <LinkTo @route="users.view" @model={{@user.id}}>View</LinkTo>
+        </button>
 
-            <button>
-                <LinkTo @route="users.update" @model={{@user.id}}>Update</LinkTo>
-            </button>
+        <button>
+            <LinkTo @route="users.update" @model={{@user.id}}>Update</LinkTo>
+        </button>
 
-            <button {{on "click" (fn @onDelete @user.id)}}>Delete</button>
+        <button {{on "click" (fn @onDelete @user.id)}}>Delete</button>
     </td>
 </tr>

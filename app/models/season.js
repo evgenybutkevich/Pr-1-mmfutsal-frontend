@@ -41,7 +41,7 @@ const Validations = buildValidations(
 export default Model.extend(Validations, {
     players: hasMany('player'),
     teams: hasMany('team'),
-    
+
     seasonName: attr('string'),
     startYear: attr('date'),
     endYear: attr('date'),
