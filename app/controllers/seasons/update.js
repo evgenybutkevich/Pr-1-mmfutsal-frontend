@@ -9,31 +9,31 @@ export default class UpdateController extends Controller {
         season.validate()
             .then(({ validations }) => {
                 if (validations.get('isValid')) {
-                    const conf = confirm('Are you sure?!');
-
-                    if (conf) {
-                        season.save()
-                            .then(() => {
-                                this.transitionToRoute('seasons.index');
-                            }, () => {}
-                            );
+                    if (!confirm('Are you sure?!')) {
+                        return
                     }
                 }
             });
+
+        season.save()
+            .then(() => {
+                this.transitionToRoute('seasons.index');
+            }, () => { }
+            );
     }
 
-    @action
-    delete(id) {
-        const season = this.store.peekRecord('season', id);
-        
-        const conf = confirm('Are you sure?!');
+    // @action
+    // delete(id) {
+    //     if (!confirm('Are you sure?!')) {
+    //         return;
+    //     }
 
-        if (conf) {
-            season.destroyRecord()
-                .then(() => {
-                    this.transitionToRoute('seasons.index');
-                }, () => {}
-                );
-        }
-    }
+    //     const season = this.store.peekRecord('season', id);
+
+    //     season.destroyRecord()
+    //         .then(() => {
+    //             this.transitionToRoute('seasons.index');
+    //         }, () => { }
+    //         );
+    // }
 };

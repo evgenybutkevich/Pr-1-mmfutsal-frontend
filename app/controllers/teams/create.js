@@ -9,16 +9,16 @@ export default class CreateController extends Controller {
         team.validate()
             .then(({ validations }) => {
                 if (validations.get('isValid')) {
-                    const conf = confirm('Are you sure?!');
-
-                    if (conf) {
-                        team.save()
-                            .then(() => {
-                                this.transitionToRoute('teams.index');
-                            }, () => {}
-                            );
+                    if (!confirm('Are you sure?!')) {
+                        return;
                     }
                 }
             });
+
+        team.save()
+            .then(() => {
+                this.transitionToRoute('teams.index');
+            }, () => { }
+            );
     }
 }

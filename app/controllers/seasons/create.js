@@ -9,16 +9,16 @@ export default class CreateController extends Controller {
         season.validate()
             .then(({ validations }) => {
                 if (validations.get('isValid')) {
-                    const conf = confirm('Are you sure?!');
-
-                    if (conf) {
-                        season.save()
-                            .then(() => {
-                                this.transitionToRoute('seasons.index');
-                            }, () => {}
-                            );
+                    if (!confirm('Are you sure?!')) {
+                        return;
                     }
                 }
             });
+
+        season.save()
+            .then(() => {
+                this.transitionToRoute('seasons.index');
+            }, () => { }
+            );
     }
 }

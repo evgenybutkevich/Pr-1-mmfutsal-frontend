@@ -1,15 +1,15 @@
 import Controller from '@ember/controller';
-import { action } from '@ember/object';
+// import { action } from '@ember/object';
 
 export default class IndexController extends Controller {
-    @action
-    delete(id) {
-        const season = this.store.peekRecord('season', id);
+    // @action
+    // delete(id) {
+    //     if (!confirm('Are you sure?!')) {
+    //         return;
+    //     }
 
-        const conf = confirm('Are you sure?!');
-        
-        if (conf) {
-            season.destroyRecord();
-        }
-    }
+    //     const season = this.store.peekRecord('season', id);
+
+    //     season.destroyRecord();
+    // }
 };

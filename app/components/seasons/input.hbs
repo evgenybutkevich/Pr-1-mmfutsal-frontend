@@ -24,7 +24,7 @@
 
 {{#if @season.id}}
     <button {{on "click" @onUpdate}}>Save</button>
-    <button {{on "click" (fn @onDelete @season.id)}}>Delete</button>
+    {{!-- <button {{on "click" (fn @onDelete @season.id)}}>Delete</button> --}}
 {{else}}
     <button {{on "click" @onCreate}}>Save</button>
 {{/if}}

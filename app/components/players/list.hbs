@@ -10,7 +10,7 @@
  
     {{#each @players as |player|}}
         {{#if player.id}}
-            <Players::Player @player={{player}} @onDelete={{@onDelete}}/>
+            <Players::Player @player={{player}}/>
         {{/if}}
     {{/each}}
 </table>

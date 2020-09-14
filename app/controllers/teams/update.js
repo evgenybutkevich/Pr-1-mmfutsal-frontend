@@ -9,31 +9,31 @@ export default class UpdateController extends Controller {
         team.validate()
             .then(({ validations }) => {
                 if (validations.get('isValid')) {
-                    const conf = confirm('Are you sure?!');
-
-                    if (conf) {
-                        team.save()
-                            .then(() => {
-                                this.transitionToRoute('teams.index');
-                            }, () => {}
-                            );
+                    if (!confirm('Are you sure?!')) {
+                        return;
                     }
                 }
             });
+
+        team.save()
+            .then(() => {
+                this.transitionToRoute('teams.index');
+            }, () => { }
+            );
     }
 
-    @action
-    delete(id) {
-        const team = this.store.peekRecord('team', id);
-        
-        const conf = confirm('Are you sure?!');
+    // @action
+    // delete(id) {
+    //     if (!confirm('Are you sure?!')) {
+    //         return;
+    //     }
 
-        if (conf) {
-            team.destroyRecord()
-                .then(() => {
-                    this.transitionToRoute('teams.index');
-                }, () => {}
-                );
-        }
-    }
+    //     const team = this.store.peekRecord('team', id);
+
+    //     team.destroyRecord()
+    //         .then(() => {
+    //             this.transitionToRoute('teams.index');
+    //         }, () => { }
+    //         );
+    // }
 };

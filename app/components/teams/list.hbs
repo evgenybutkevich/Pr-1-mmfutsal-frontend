@@ -9,7 +9,7 @@
  
     {{#each @teams as |team|}}
         {{#if team.id}}
-            <Teams::Team @team={{team}} @onDelete={{@onDelete}}/>
+            <Teams::Team @team={{team}}/>
         {{/if}}
     {{/each}}
 </table>
