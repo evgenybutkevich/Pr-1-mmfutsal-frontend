@@ -13,7 +13,6 @@ export default class ViewController extends Controller {
         user.destroyRecord()
             .then(() => {
                 this.transitionToRoute('users.index');
-            }, () => { }
-            );
+            });
     }
 };

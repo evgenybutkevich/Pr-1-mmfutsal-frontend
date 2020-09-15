@@ -12,14 +12,13 @@ export default class UpdateController extends Controller {
                     if (!confirm('Are you sure?!')) {
                         return;
                     }
+
+                    user.save()
+                        .then(() => {
+                            this.transitionToRoute('users.index');
+                        });
                 }
             });
-
-        user.save()
-            .then(() => {
-                this.transitionToRoute('users.index');
-            }, () => { }
-            );
     }
 
     @action
@@ -33,7 +32,6 @@ export default class UpdateController extends Controller {
         user.destroyRecord()
             .then(() => {
                 this.transitionToRoute('users.index');
-            }, () => { }
-            );
+            });
     }
 };

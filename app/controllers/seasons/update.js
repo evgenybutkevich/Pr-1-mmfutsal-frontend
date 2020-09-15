@@ -12,28 +12,12 @@ export default class UpdateController extends Controller {
                     if (!confirm('Are you sure?!')) {
                         return
                     }
+
+                    season.save()
+                        .then(() => {
+                            this.transitionToRoute('seasons.index');
+                        });
                 }
             });
-
-        season.save()
-            .then(() => {
-                this.transitionToRoute('seasons.index');
-            }, () => { }
-            );
     }
-
-    // @action
-    // delete(id) {
-    //     if (!confirm('Are you sure?!')) {
-    //         return;
-    //     }
-
-    //     const season = this.store.peekRecord('season', id);
-
-    //     season.destroyRecord()
-    //         .then(() => {
-    //             this.transitionToRoute('seasons.index');
-    //         }, () => { }
-    //         );
-    // }
 };

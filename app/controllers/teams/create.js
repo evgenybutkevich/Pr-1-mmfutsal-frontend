@@ -12,13 +12,12 @@ export default class CreateController extends Controller {
                     if (!confirm('Are you sure?!')) {
                         return;
                     }
+
+                    team.save()
+                        .then(() => {
+                            this.transitionToRoute('teams.index');
+                        });
                 }
             });
-
-        team.save()
-            .then(() => {
-                this.transitionToRoute('teams.index');
-            }, () => { }
-            );
     }
 }
