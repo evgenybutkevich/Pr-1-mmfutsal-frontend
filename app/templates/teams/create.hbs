@@ -1,5 +1,10 @@
 <h3>TEAM CREATE</h3>
 
-<div class="user-input">
-    <Teams::Input @team={{model}} @onCreate={{this.create}} />
-</div>
+<ValidatedInputGroup
+    @label="TEAM NAME"
+    @placeholder="Please, enter team name!"
+    @type="text"
+    @value={{model.teamName}}
+    @validationError={{model.validations.attrs.teamName.message}} />
+
+<button {{on "click" this.create}}>Create</button>

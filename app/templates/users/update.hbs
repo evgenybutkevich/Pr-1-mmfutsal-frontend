@@ -1,5 +1,45 @@
 <h3>USER UPDATE</h3>
 
-<div class="user-input">
-    <Users::Input @user={{model}} @onDelete={{this.delete}} @onUpdate={{this.update}} />
-</div>
+<ValidatedInputGroup
+    @label="USERNAME"
+    @placeholder="Please, enter your username!"
+    @type="text"
+    @value={{model.userName}}
+    @validationError={{model.validations.attrs.userName.message}} />
+
+<ValidatedInputGroup
+    @label="EMAIL"
+    @placeholder="Please, enter your email address!"
+    @type="email"
+    @value={{model.email}}
+    @validationError={{model.validations.attrs.email.message}} />
+
+<ValidatedInputGroup
+    @label="TELEPHONE"
+    @placeholder="Please, enter your telephone number!"
+    @type="text"
+    @value={{model.telephone}}
+    @validationError={{model.validations.attrs.telephone.message}} />
+
+<ValidatedInputGroup
+    @label="PASSWORD"
+    @placeholder="Please, enter your password!"
+    @type="password"
+    @value={{model.password}}
+    @validationError={{model.validations.attrs.password.message}} />
+
+<ValidatedInputGroup
+    @label="FIRST NAME"
+    @placeholder="Please, enter your first name!"
+    @type="text"
+    @value={{model.firstName}}
+    @validationError={{model.validations.attrs.firstName.message}} />
+
+<ValidatedInputGroup
+    @label="LAST NAME"
+    @placeholder="Please, enter your last name!"
+    @type="text"
+    @value={{model.lastName}}
+    @validationError={{model.validations.attrs.lastName.message}} />
+
+<button {{on "click" this.update}}>Update</button>

@@ -1,5 +1,17 @@
 <h3>PLAYER CREATE</h3>
 
-<div class="user-input">
-    <Players::Input @player={{model}} @onCreate={{this.create}} />
-</div>
+<ValidatedInputGroup
+    @label="FIRST NAME"
+    @placeholder="Please, enter first name!"
+    @type="text"
+    @value={{model.firstName}}
+    @validationError={{model.validations.attrs.firstName.message}} />
+
+<ValidatedInputGroup
+    @label="LAST NAME"
+    @placeholder="Please, enter last name!"
+    @type="text"
+    @value={{model.lastName}}
+    @validationError={{model.validations.attrs.lastName.message}} />
+
+<button {{on "click" this.create}}>Create</button>

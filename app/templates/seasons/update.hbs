@@ -1,5 +1,24 @@
 <h3>SEASON UPDATE</h3>
 
-<div class="user-input">
-    <Seasons::Input @season={{model}} @onUpdate={{this.update}} />
-</div>
+<ValidatedInputGroup
+    @label="SEASON NAME"
+    @placeholder="Please, enter season name!"
+    @type="text"
+    @value={{model.seasonName}}
+    @validationError={{model.validations.attrs.seasonName.message}} />
+
+<ValidatedInputGroup
+    @label="START YEAR"
+    @placeholder="Please, choose start year!"
+    @type="text"
+    @value={{model.startYear}}
+    @validationError={{model.validations.attrs.startYear.message}} />
+
+<ValidatedInputGroup
+    @label="END YEAR"
+    @placeholder="Please, choose end year!"
+    @type="text"
+    @value={{model.endYear}}
+    @validationError={{model.validations.attrs.endYear.message}} />
+
+<button {{on "click" this.update}}>Update</button>

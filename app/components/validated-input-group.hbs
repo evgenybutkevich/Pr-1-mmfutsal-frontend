@@ -1,0 +1,17 @@
+<label>
+    <div class="text">
+        {{@label}}
+    </div>
+
+    <Input
+        @focus-in={{this.setFocused}}
+        placeholder={{@placeholder}}
+        type={{@type}}
+        @value={{@value}} />
+
+        {{#if this.isFocused}}
+            <div class='error'>
+                {{@validationError}}
+            </div>
+        {{/if}}
+</label>
