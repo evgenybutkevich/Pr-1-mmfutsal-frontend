@@ -1,0 +1,29 @@
+<div>
+    <label for="seasonName">Season name:</label>
+    {{input id="seasonName" placeholder="Season name" value=@season.seasonName}}
+</div>
+<div class='error'>
+    {{v-get @season 'seasonName' 'message'}}
+</div>
+
+<div>
+    <label for="startYear">Start year:</label>
+    {{input id="startYear" placeholder="Start year" value=@season.startYear}}
+</div>
+<div class='error'>
+    {{v-get @season 'startYear' 'message'}}
+</div>
+
+<div>
+    <label for="endYear">End year:</label>
+    {{input id="endYear" placeholder="End year" value=@season.endYear}}
+</div>
+<div class='error'>
+    {{v-get @season 'endYear' 'message'}}
+</div>
+
+{{#if @season.id}}
+    <button {{on "click" @onUpdate}}>Save</button>
+{{else}}
+    <button {{on "click" @onCreate}}>Save</button>
+{{/if}}

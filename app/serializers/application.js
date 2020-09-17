@@ -1,3 +1,3 @@
 import RESTSerializer from '@ember-data/serializer/rest';
 
-export default RESTSerializer.extend();
+export default class Serializer extends RESTSerializer {}

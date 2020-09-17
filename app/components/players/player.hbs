@@ -1,0 +1,15 @@
+<tr>
+    <td>{{@player.id}}</td>
+    <td>{{@player.firstName}}</td>
+    <td>{{@player.lastName}}</td>
+
+    <td>
+        <button>
+            <LinkTo @route="players.view" @model={{@player.id}}>View</LinkTo>
+        </button>
+
+        <button>
+            <LinkTo @route="players.update" @model={{@player.id}}>Update</LinkTo>
+        </button>
+    </td>
+</tr>

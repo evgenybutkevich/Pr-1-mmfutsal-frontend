@@ -1,0 +1,13 @@
+<div>
+    <label for="firstName">First name:</label>
+    <span>{{@player.firstName}}</span>
+</div>
+
+<div>
+    <label for="lastName">Last name:</label>
+    <span>{{@player.lastName}}</span>
+</div>
+
+<button>
+    <LinkTo @route="players.update" @model={{@player.id}}>Update</LinkTo>
+</button>

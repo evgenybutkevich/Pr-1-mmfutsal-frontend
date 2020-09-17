@@ -1,0 +1,14 @@
+<tr>
+    <td>{{@team.id}}</td>
+    <td>{{@team.teamName}}</td>
+
+    <td>
+        <button>
+            <LinkTo @route="teams.view" @model={{@team.id}}>View</LinkTo>
+        </button>
+
+        <button>
+            <LinkTo @route="teams.update" @model={{@team.id}}>Update</LinkTo>
+        </button>
+    </td>
+</tr>

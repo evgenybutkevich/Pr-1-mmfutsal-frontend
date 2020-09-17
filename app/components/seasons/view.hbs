@@ -1,0 +1,18 @@
+<div>
+    <label for="seasonName">Season name:</label>
+    <span>{{@season.seasonName}}</span>
+</div>
+
+<div>
+    <label for="startYear">Start year:</label>
+    <span>{{@season.startYear}}</span>
+</div>
+
+<div>
+    <label for="endYear">End year:</label>
+    <span>{{@season.endYear}}</span>
+</div>
+
+<button>
+    <LinkTo @route="seasons.update" @model={{@season.id}}>Update</LinkTo>
+</button>

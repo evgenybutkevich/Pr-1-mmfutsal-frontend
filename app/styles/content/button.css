@@ -1,0 +1,13 @@
+button, button > a {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    text-decoration: none;
+    padding: 5px 10px 5px;
+    border-radius: 5px;
+}
+
+button:hover {
+    color: yellow;
+    opacity: 1;
+}

@@ -1,0 +1,16 @@
+<tr>
+    <td>{{@season.id}}</td>
+    <td>{{@season.seasonName}}</td>
+    <td>{{@season.startYear}}</td>
+    <td>{{@season.endYear}}</td>
+
+    <td>
+        <button>
+            <LinkTo @route="seasons.view" @model={{@season.id}}>View</LinkTo>
+        </button>
+
+        <button>
+            <LinkTo @route="seasons.update" @model={{@season.id}}>Update</LinkTo>
+        </button>
+    </td>
+</tr>

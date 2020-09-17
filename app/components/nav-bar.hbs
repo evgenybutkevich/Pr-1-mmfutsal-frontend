@@ -1,23 +1,10 @@
-<nav class="menu">
+<nav>
+    <LinkTo @route="index">Home</LinkTo>
+    <LinkTo @route="players">Players</LinkTo>
+    <LinkTo @route="teams">Teams</LinkTo>
+    <LinkTo @route="users">Users</LinkTo>
+    <LinkTo @route="contacts">Contacts</LinkTo>
+    <LinkTo @route="about">About</LinkTo>
 
-    <LinkTo @route="index" class="menu-index">
-        <h1>MMFutsal</h1>
-    </LinkTo>
-
-    <div class="links">
-
-        <LinkTo @route="about" class="menu-about">
-            About
-        </LinkTo>
-
-        <LinkTo @route="users" class="menu-users">
-            Users
-        </LinkTo>
-
-        <LinkTo @route="contacts" class="menu-contacts">
-            Contacts
-        </LinkTo>
-
-    </div>
-
+    <div class="animation"></div>
 </nav>

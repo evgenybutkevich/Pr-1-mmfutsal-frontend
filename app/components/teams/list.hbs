@@ -1,0 +1,13 @@
+<table>
+    <tr>
+        <th>Team ID</th>
+        <th>Team name</th>
+        <th></th>
+   </tr>
+
+    {{#each @teams as |team|}}
+        {{#if team.id}}
+            <Teams::Team @team={{team}}/>
+        {{/if}}
+    {{/each}}
+</table>
