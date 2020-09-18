@@ -6,11 +6,11 @@ const Validations = buildValidations(
         teamName: {
             description: 'Team name',
             validators: [
+                validator('presence', true),
                 validator('length', {
                     min: 2,
-                    max: 30,
+                    max: 20,
                 }),
-                validator('presence', true),
             ],
         },
     },
