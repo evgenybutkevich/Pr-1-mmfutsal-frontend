@@ -3,10 +3,10 @@ import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 
 export default class ValidatedInputGroupComponent extends Component {
-    @tracked isFocused = false;
+    @tracked showValidationError = false;
 
     @action
-    setFocused() {
-        this.isFocused = true;
+    onFocusOut() {
+        this.showValidationError = true;
     }
 }
