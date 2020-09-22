@@ -1,8 +1,8 @@
 <table>
     <tr>
-        <th>User ID</th>
-        <th>First name</th>
-        <th>Last name</th>
+        <th><button {{on "click" (fn @onHeaderClick 'id')}}>Player id</button></th>
+        <th><button {{on "click" (fn @onHeaderClick 'firstName')}}>First name</button></th>
+        <th><button {{on "click" (fn @onHeaderClick 'lastName')}}>Last name</button></th>
         {{!-- <th>createdAt</th> --}}
         {{!-- <th>updatedAt</th> --}}
         <th></th>
