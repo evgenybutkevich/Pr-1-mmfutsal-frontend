@@ -1,5 +1,45 @@
-<h3>USER CREATE</h3>
+<h3>user create</h3>
 
-<div class="user-input">
-    <Users::Input @user={{model}} @onCreate={{this.create}} />
-</div>
+<ValidatedInputGroup
+    @label="username"
+    @type="text"
+    @value={{model.userName}}
+    @placeholder="Enter your username"
+    @validationError={{model.validations.attrs.userName.message}} />
+
+<ValidatedInputGroup
+    @label="email"
+    @type="email"
+    @value={{model.email}}
+    @placeholder="Enter your email address"
+    @validationError={{model.validations.attrs.email.message}} />
+
+<ValidatedInputGroup
+    @label="telephone"
+    @type="text"
+    @value={{model.telephone}}
+    @placeholder="Enter your telephone number"
+    @validationError={{model.validations.attrs.telephone.message}} />
+
+<ValidatedInputGroup
+    @label="password"
+    @type="password"
+    @value={{model.password}}
+    @placeholder="Enter your password"
+    @validationError={{model.validations.attrs.password.message}} />
+
+<ValidatedInputGroup
+    @label="first name"
+    @type="text"
+    @value={{model.firstName}}
+    @placeholder="Enter your first name"
+    @validationError={{model.validations.attrs.firstName.message}} />
+
+<ValidatedInputGroup
+    @label="last name"
+    @type="text"
+    @value={{model.lastName}}
+    @placeholder="Enter your last name"
+    @validationError={{model.validations.attrs.lastName.message}} />
+
+<button {{on "click" this.create}}>Create</button>

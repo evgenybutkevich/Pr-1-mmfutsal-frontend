@@ -6,33 +6,33 @@ const Validations = buildValidations(
         seasonName: {
             description: 'Season name',
             validators: [
+                validator('presence', true),
                 validator('length', {
                     min: 2,
-                    max: 30,
+                    max: 20,
                 }),
-                validator('presence', true),
             ],
         },
         startYear: {
             description: 'Start year',
             validators: [
+                validator('presence', true),
                 validator('date', {
                     after: '2010-01-01',
                     before: '2030-12-31',
                     format: 'YYYY-MM-DD',
                 }),
-                validator('presence', true),
             ],
         },
         endYear: {
             description: 'End year',
             validators: [
+                validator('presence', true),
                 validator('date', {
                     after: '2010-01-01',
                     before: '2030-12-31',
                     format: 'YYYY-MM-DD',
                 }),
-                validator('presence', true),
             ],
         },
     },

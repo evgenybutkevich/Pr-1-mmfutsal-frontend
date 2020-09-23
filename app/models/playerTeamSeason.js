@@ -5,32 +5,32 @@ const Validations = buildValidations(
     {
         playerId: {
             validators: [
+                validator('presence', true),
                 validator('number', {
                     gt: 0,
                     integer: true,
                     positive: true,
                 }),
-                validator('presence', true),
             ],
         },
         teamId: {
             validators: [
+                validator('presence', true),
                 validator('number', {
                     gt: 0,
                     integer: true,
                     positive: true,
                 }),
-                validator('presence', true),
             ],
         },
         seasonId: {
             validators: [
+                validator('presence', true),
                 validator('number', {
                     gt: 0,
                     integer: true,
                     positive: true,
                 }),
-                validator('presence', true),
             ],
         },
     },

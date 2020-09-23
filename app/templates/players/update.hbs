@@ -1,5 +1,17 @@
-<h3>PLAYER UPDATE</h3>
+<h3>player update</h3>
 
-<div class="user-input">
-    <Players::Input @player={{model}} @onUpdate={{this.update}} />
-</div>
+<ValidatedInputGroup
+    @label="first name"
+    @type="text"
+    @value={{model.firstName}}
+    @placeholder="Enter first name"
+    @validationError={{model.validations.attrs.firstName.message}} />
+
+<ValidatedInputGroup
+    @label="last name"
+    @type="text"
+    @value={{model.lastName}}
+    @placeholder="Enter last name"
+    @validationError={{model.validations.attrs.lastName.message}} />
+
+<button {{on "click" this.update}}>Update</button>

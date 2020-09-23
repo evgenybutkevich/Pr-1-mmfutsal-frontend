@@ -5,52 +5,52 @@ const Validations = buildValidations(
     {
         playerTeamSeasonId: {
             validators: [
+                validator('presence', true),
                 validator('number', {
                     gt: 0,
                     integer: true,
                     positive: true,
                 }),
-                validator('presence', true),
             ],
         },
         goals: {
             description: 'Goals',
             validators: [
+                validator('presence', true),
                 validator('number', {
                     integer: true,
                     positive: true,
                 }),
-                validator('presence', true),
             ],
         },
         yellowCards: {
             description: 'Yellow cards',
             validators: [
+                validator('presence', true),
                 validator('number', {
                     integer: true,
                     positive: true,
                 }),
-                validator('presence', true),
             ],
         },
         redCards: {
             description: 'Red cards',
             validators: [
+                validator('presence', true),
                 validator('number', {
                     integer: true,
                     positive: true,
                 }),
-                validator('presence', true),
             ],
         },
         gamesPlayed: {
             description: 'Games played',
             validators: [
+                validator('presence', true),
                 validator('number', {
                     integer: true,
                     positive: true,
                 }),
-                validator('presence', true),
             ],
         },
     },

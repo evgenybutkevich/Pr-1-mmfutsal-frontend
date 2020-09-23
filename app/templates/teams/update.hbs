@@ -1,5 +1,10 @@
-<h3>TEAM UPDATE</h3>
+<h3>team update</h3>
 
-<div class="user-input">
-    <Teams::Input @team={{model}} @onUpdate={{this.update}} />
-</div>
+<ValidatedInputGroup
+    @label="team name"
+    @type="text"
+    @value={{model.teamName}}
+    @placeholder="Enter team name"
+    @validationError={{model.validations.attrs.teamName.message}} />
+
+<button {{on "click" this.update}}>Update</button>

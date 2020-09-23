@@ -1,0 +1,18 @@
+<label>
+    <div class="text">
+        {{@label}}
+    </div>
+
+    <Input
+        type={{@type}}
+        @value={{@value}}
+        placeholder={{@placeholder}}
+
+        @focus-out={{this.onFocusOut}} />
+
+        {{#if this.showValidationError}}
+            <div class='error'>
+                {{@validationError}}
+            </div>
+        {{/if}}
+</label>
