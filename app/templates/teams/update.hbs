@@ -1,10 +1,10 @@
-<h3>TEAM UPDATE</h3>
+<h3>team update</h3>
 
 <ValidatedInputGroup
-    @label="TEAM NAME"
-    @placeholder="Please, enter team name!"
+    @label="team name"
     @type="text"
     @value={{model.teamName}}
+    @placeholder="Enter team name"
     @validationError={{model.validations.attrs.teamName.message}} />
 
 <button {{on "click" this.update}}>Update</button>
