@@ -2,8 +2,8 @@ import Controller from '@ember/controller';
 import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 
-const ascendingDirection = 'ASC';
-const descendingDirection = 'DESC';
+const ASCENDING_DIRECTION = 'ASC';
+const DESCENDING_DIRECTION = 'DESC';
 
 export default class IndexController extends Controller {
     queryParams = [
@@ -12,14 +12,14 @@ export default class IndexController extends Controller {
     ];
 
     @tracked sortField = 'id';
-    @tracked sortDirection = ascendingDirection;
+    @tracked sortDirection = ASCENDING_DIRECTION;
 
     @action
     onHeaderClick(sortField) {
         this.sortField = sortField;
 
-        this.sortDirection = (this.sortDirection === ascendingDirection)
-            ? descendingDirection
-            : ascendingDirection;
+        this.sortDirection = (this.sortDirection === ASCENDING_DIRECTION)
+            ? DESCENDING_DIRECTION
+            : ASCENDING_DIRECTION;
     }
 }
