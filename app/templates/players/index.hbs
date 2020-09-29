@@ -3,4 +3,24 @@
     </h3>
 </div>
 
-<Players::List @players={{model}} @onHeaderClick={{this.onHeaderClick}} @sortDirection={{this.sortDirection}} />
+<label>
+    <span>
+        Filter field
+    </span>
+
+    <Input id="filterField" @value={{this.field}} />
+</label>
+
+<label>
+    <span>
+        Filter field
+    </span>
+
+    <Input id="filterValue" @value={{this.value}} />
+    <button {{on "click" this.updateFilter}}>Filter</button>
+</label>
+
+<Players::List
+    @players={{model}}
+    @onHeaderClick={{this.onHeaderClick}}
+    @sortDirection={{this.sortDirection}}/>
