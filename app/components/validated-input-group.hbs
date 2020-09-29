@@ -4,10 +4,11 @@
     </div>
 
     <Input
-        @focus-out={{this.onFocusOut}}
-        placeholder={{@placeholder}}
         type={{@type}}
-        @value={{@value}} />
+        @value={{@value}}
+        placeholder={{@placeholder}}
+
+        @focus-out={{this.onFocusOut}} />
 
         {{#if this.showValidationError}}
             <div class='error'>
