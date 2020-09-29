@@ -12,16 +12,9 @@ export default class IndexController extends Controller {
     @tracked sortDirection = 'ASC';
 
     @action
-    onHeaderClick(fieldName) {
-        this.sortField = fieldName;
+    onHeaderClick(sortField) {
+        this.sortField = sortField;
 
-        switch (this.sortDirection) {
-            case 'ASC':
-                this.sortDirection = 'DESC';
-                break;
-            case 'DESC':
-                this.sortDirection = 'ASC';
-                break;
-        }
+        this.sortDirection = (this.sortDirection == "ASC") ? "DESC" : "ASC";
     }
 }
