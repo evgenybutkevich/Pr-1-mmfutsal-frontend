@@ -3,6 +3,15 @@
         <th {{on "click" (fn @onHeaderClick 'id')}}>id</th>
         <th {{on "click" (fn @onHeaderClick 'firstName')}}>First name</th>
         <th {{on "click" (fn @onHeaderClick 'lastName')}}>Last name</th>
+        <th>
+            Records on page
+            <select name="limit" id="limit" {{on "change" (fn @updateLimit value="target.value")}}>
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="20">20</option>
+                <option value="50">50</option>
+            </select>
+        </th>
    </tr>
 
     {{#each @players as |player|}}

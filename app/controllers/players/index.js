@@ -6,16 +6,31 @@ const ASCENDING_DIRECTION = 'ASC';
 const DESCENDING_DIRECTION = 'DESC';
 
 export default class IndexController extends Controller {
+    get pageArray() {
+        let array = []
+
+        for (let index = 1; index <= Math.ceil(this.model.meta.count / this.limit); index++) {
+            array.push(index);
+        }
+
+        return array;
+    }
+
     @tracked filterField;
     @tracked filterValue;
 
     @tracked sortField = 'id';
     @tracked sortDirection = ASCENDING_DIRECTION;
 
+    @tracked page = 1;
+    @tracked limit = 5;
+
     filterFieldValues = [
         'firstName',
         'lastName'
     ]
+
+    limitValues = [5, 10, 20, 50];
 
     @action
     chooseFilterField(filterField) {
@@ -34,5 +49,15 @@ export default class IndexController extends Controller {
         this.sortDirection = (this.sortDirection === ASCENDING_DIRECTION)
             ? DESCENDING_DIRECTION
             : ASCENDING_DIRECTION;
+    }
+
+    @action
+    onPageClick(page) {
+        this.page = page;
+    }
+
+    @action
+    chooseLimit(limit) {
+        this.limit = limit;
     }
 }

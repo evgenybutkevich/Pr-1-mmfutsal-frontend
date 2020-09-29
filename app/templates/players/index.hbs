@@ -25,4 +25,14 @@
     <button {{on "click" (fn this.onFilterClick)}}>Filter</button>
 </label>
 
-<Players::List @players={{model}} @onHeaderClick={{this.onHeaderClick}} @sortDirection={{this.sortDirection}} />
+<Players::List
+    @players={{model}}
+    @onHeaderClick={{this.onHeaderClick}}
+    @updateLimit={{this.updateLimit}}
+    @sortDirection={{this.sortDirection}}
+    @limit={{this.limit}} />
+
+Pages
+{{#each this.pageArray as |index|}}
+    <button {{on "click" (fn this.onPageClick index)}}>{{index}}</button>
+{{/each}}
