@@ -8,19 +8,16 @@
         Filter field
     </span>
 
-    <Input id="filterField" @value={{this.field}} />
+    <Input id="filterField" @value={{field}} />
 </label>
 
 <label>
     <span>
-        Filter field
+        Filter value
     </span>
 
-    <Input id="filterValue" @value={{this.value}} />
-    <button {{on "click" this.updateFilter}}>Filter</button>
+    <Input id="filterValue" @value={{value}} />
+    <button {{on "click" (fn this.onFilterClick field value)}}>Filter</button>
 </label>
 
-<Players::List
-    @players={{model}}
-    @onHeaderClick={{this.onHeaderClick}}
-    @sortDirection={{this.sortDirection}}/>
+<Players::List @players={{model}} @onHeaderClick={{this.onHeaderClick}} @sortDirection={{this.sortDirection}} />

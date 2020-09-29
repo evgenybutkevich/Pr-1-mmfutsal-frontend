@@ -9,15 +9,22 @@ export default class IndexController extends Controller {
     queryParams = [
         'filterField',
         'filterValue',
+
         'sortField',
         'sortDirection'
     ];
 
     @tracked filterField;
     @tracked filterValue;
-    @tracked filter = "";
+
     @tracked sortField = 'id';
     @tracked sortDirection = ASCENDING_DIRECTION;
+
+    @action
+    onFilterClick(filterField, filterValue) {
+        this.filterField = filterField;
+        this.filterValue = filterValue;
+    }
 
     @action
     onHeaderClick(sortField) {
@@ -26,11 +33,5 @@ export default class IndexController extends Controller {
         this.sortDirection = (this.sortDirection === ASCENDING_DIRECTION)
             ? DESCENDING_DIRECTION
             : ASCENDING_DIRECTION;
-    }
-
-    @action
-    updateFilter() {
-        this.filterField = this.field
-        this.filterValue = this.value;
     }
 }
