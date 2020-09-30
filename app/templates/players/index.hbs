@@ -3,4 +3,26 @@
     </h3>
 </div>
 
+<label>
+    <span>
+        Filter field
+    </span>
+
+    <PowerSelect
+        @options={{this.filterFieldValues}}
+        @selected={{this.filterField}}
+        @onChange={{this.chooseFilterField}} as |field|>
+        {{field}}
+    </PowerSelect>
+</label>
+
+<label>
+    <span>
+        Filter value
+    </span>
+
+    <Input id="filterValue" @value={{value}} />
+    <button {{on "click" (fn this.onFilterClick)}}>Filter</button>
+</label>
+
 <Players::List @players={{model}} @onHeaderClick={{this.onHeaderClick}} @sortDirection={{this.sortDirection}} />
