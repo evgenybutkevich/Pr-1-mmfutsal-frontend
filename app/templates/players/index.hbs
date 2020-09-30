@@ -8,7 +8,10 @@
         Filter field
     </span>
 
-    <Input id="filterField" @value={{field}} />
+    <select id="filterField">
+        <option value="firstName">First name</option>
+        <option value="lastName">Last name</option>
+    </select>
 </label>
 
 <label>
@@ -17,7 +20,7 @@
     </span>
 
     <Input id="filterValue" @value={{value}} />
-    <button {{on "click" (fn this.onFilterClick field value)}}>Filter</button>
+    <button {{on "click" (fn this.onFilterClick)}}>Filter</button>
 </label>
 
 <Players::List @players={{model}} @onHeaderClick={{this.onHeaderClick}} @sortDirection={{this.sortDirection}} />

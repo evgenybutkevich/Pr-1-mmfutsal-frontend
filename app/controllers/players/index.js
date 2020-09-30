@@ -18,9 +18,9 @@ export default class IndexController extends Controller {
     @tracked sortDirection = 'ASC';
 
     @action
-    onFilterClick(filterField, filterValue) {
-        this.filterField = filterField;
-        this.filterValue = filterValue;
+    onFilterClick() {
+        this.filterField = document.getElementById('filterField').value;
+        this.filterValue = this.value;
     }
 
     @action
