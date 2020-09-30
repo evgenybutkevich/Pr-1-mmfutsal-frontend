@@ -36,6 +36,16 @@ export default class IndexController extends Controller {
     }
 
     @action
+    chooseFilterField(filterField) {
+        this.filterField = filterField;
+    }
+
+    @action
+    onFilterClick() {
+        this.filterValue = this.value;
+    }
+
+    @action
     onHeaderClick(sortField) {
         this.sortField = sortField;
 
