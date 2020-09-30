@@ -8,10 +8,12 @@
         Filter field
     </span>
 
-    <select id="filterField">
-        <option value="firstName">First name</option>
-        <option value="lastName">Last name</option>
-    </select>
+    <PowerSelect
+        @options={{this.filterFieldValues}}
+        @selected={{this.filterField}}
+        @onChange={{this.chooseFilterField}} as |field|>
+            {{field}}
+        </PowerSelect>
 </label>
 
 <label>
