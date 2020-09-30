@@ -6,34 +6,16 @@ const ASCENDING_DIRECTION = 'ASC';
 const DESCENDING_DIRECTION = 'DESC';
 
 export default class IndexController extends Controller {
-    queryParams = [
-        'filterField',
-        'filterValue',
-
-        'sortField',
-        'sortDirection'
-    ];
-
-    filterFieldValues = [
-        'firstName',
-        'lastName'
-    ]
-
     @tracked filterField;
     @tracked filterValue;
 
     @tracked sortField = 'id';
     @tracked sortDirection = ASCENDING_DIRECTION;
 
-    @action
-    chooseFilterField(filterField) {
-        this.filterField = filterField;
-    }
-
-    @action
-    onFilterClick() {
-        this.filterValue = this.value;
-    }
+    filterFieldValues = [
+        'firstName',
+        'lastName'
+    ]
 
     @action
     chooseFilterField(filterField) {
