@@ -14,6 +14,11 @@ export default class IndexController extends Controller {
         'sortDirection'
     ];
 
+    filterFieldValues = [
+        'firstName',
+        'lastName'
+    ]
+
     @tracked filterField;
     @tracked filterValue;
 
@@ -21,8 +26,12 @@ export default class IndexController extends Controller {
     @tracked sortDirection = ASCENDING_DIRECTION;
 
     @action
+    chooseFilterField(filterField) {
+        this.filterField = filterField;
+    }
+
+    @action
     onFilterClick() {
-        this.filterField = document.getElementById('filterField').value;
         this.filterValue = this.value;
     }
 
