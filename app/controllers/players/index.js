@@ -30,7 +30,7 @@ export default class IndexController extends Controller {
     @tracked page = 1;
     @tracked limit = 5;
 
-    arrayLimit = [5, 10, 20, 50];
+    limitValues = [5, 10, 20, 50];
 
     @action
     onHeaderClick(sortField) {
@@ -45,8 +45,8 @@ export default class IndexController extends Controller {
     }
 
     @action
-    updateLimit(event) {
-        this.limit = event.target.value;
+    chooseLimit(limit) {
+        this.limit = limit;
     }
 
     @action
