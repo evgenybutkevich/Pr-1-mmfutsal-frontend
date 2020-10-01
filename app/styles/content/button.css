@@ -11,3 +11,15 @@ button:hover {
     color: yellow;
     opacity: 1;
 }
+
+.pages {
+    display: block;
+}
+
+.pages p {
+    display: inline-block;
+}
+
+.pages .disabled {
+    background-color: gray;
+}

@@ -35,12 +35,13 @@
     @limit={{this.limit}}
     @selectLimit={{this.selectLimit}}/>
 
-Pages
-{{#each this.pageArray as |index|}}
-    <button
-        class={{if (eq index this.page) "disabled"}}
-        disabled={{if (eq index this.page) "disabled"}}
+<div class="pages">
+    <p>Pages</p>
+
+    {{#each this.pageArray as |index|}}
+    <button class={{if (eq index this.page) "disabled"}} disabled={{if (eq index this.page) "disabled"}}
         {{on "click" (fn this.onPageClick index)}}>
         {{index}}
     </button>
-{{/each}}
+    {{/each}}
+</div>
