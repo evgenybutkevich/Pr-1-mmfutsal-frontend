@@ -6,10 +6,10 @@
         <th>
             Records on page
             <PowerSelect
-                @options={{this.limitValues}}
-                @selected={{this.limit}}
-                @onChange={{this.chooseLimit}} as |limit|>
-                    {{limit}}
+                @options={{@limitValues}}
+                @selected={{@limit}}
+                @onChange={{@selectLimit}} as |limit|>
+                {{limit}}
             </PowerSelect>
         </th>
    </tr>
