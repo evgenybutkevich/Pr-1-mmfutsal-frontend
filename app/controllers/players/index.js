@@ -33,13 +33,15 @@ export default class IndexController extends Controller {
     limitValues = [5, 10, 20, 50];
 
     @action
-    chooseFilterField(filterField) {
+    selectFilterField(filterField) {
         this.filterField = filterField;
     }
 
     @action
     onFilterClick() {
         this.filterValue = this.value;
+
+        this.page = 1;
     }
 
     @action
@@ -49,6 +51,8 @@ export default class IndexController extends Controller {
         this.sortDirection = (this.sortDirection === ASCENDING_DIRECTION)
             ? DESCENDING_DIRECTION
             : ASCENDING_DIRECTION;
+
+        this.page = 1;
     }
 
     @action
@@ -57,7 +61,9 @@ export default class IndexController extends Controller {
     }
 
     @action
-    chooseLimit(limit) {
+    selectLimit(limit) {
         this.limit = limit;
+
+        this.page = 1;
     }
 }
