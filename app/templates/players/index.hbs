@@ -11,7 +11,7 @@
     <PowerSelect
         @options={{this.filterFieldValues}}
         @selected={{this.filterField}}
-        @onChange={{this.chooseFilterField}} as |field|>
+        @onChange={{this.selectFilterField}} as |field|>
         {{field}}
     </PowerSelect>
 </label>
@@ -27,12 +27,20 @@
 
 <Players::List
     @players={{model}}
+
     @onHeaderClick={{this.onHeaderClick}}
-    @updateLimit={{this.updateLimit}}
     @sortDirection={{this.sortDirection}}
-    @limit={{this.limit}} />
+
+    @limitValues={{this.limitValues}}
+    @limit={{this.limit}}
+    @selectLimit={{this.selectLimit}}/>
 
 Pages
 {{#each this.pageArray as |index|}}
-    <button {{on "click" (fn this.onPageClick index)}}>{{index}}</button>
+    <button
+        class={{if (eq index this.page) "disabled"}}
+        disabled={{if (eq index this.page) "disabled"}}
+        {{on "click" (fn this.onPageClick index)}}>
+        {{index}}
+    </button>
 {{/each}}
