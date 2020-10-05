@@ -53,12 +53,30 @@ export default class IndexController extends Controller {
     }
 
     @action
+    onPageDecrementClick() {
+        if (this.page === 1) {
+            return;
+        }
+
+        this.page -= 1;
+    }
+
+    @action
     onPageClick(page) {
         this.page = page;
     }
 
     @action
-    selectLimit(limit) {
+    onPageIncrementClick() {
+        if (this.page == this.pageValues.length) {
+            return;
+        }
+
+        this.page += 1;
+    }
+
+    @action
+    onLimitClick(limit) {
         this.limit = limit;
         this.resetPage();
     }
