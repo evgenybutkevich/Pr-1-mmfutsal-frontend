@@ -1,0 +1,55 @@
+.filter-input-group {
+    display: flex;
+    flex-direction: row;
+    margin-top: 3vh;
+
+    .field-input-group,
+    .value-input-group {
+        background-color: white;
+        border: 1px solid black;
+        display: inline-flex;
+        margin: 0;
+        margin-right: 10px;
+        padding: 0;
+        position: relative;
+
+        .group-input {
+            border: none;
+            font-size: 15px;
+            outline: 0;
+            padding: 20px 0 5px 5px;
+
+            &:focus+.group-label,
+            &:valid+.group-label {
+                color: gray;
+                transform: translate(0, 2px) scale(0.9);
+                transition: all 0.3s ease;
+            }
+        }
+
+        .group-label {
+            font-size: 16px;
+            left: 5px;
+            position: absolute;
+            top: 0;
+            transform-origin: top left;
+            transform: translate(0, 20px) scale(1);
+            transition: all 0.3s ease;
+        }
+    }
+
+    .group-button {
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid black;
+        border-left: 1px solid black;
+        outline: 0;
+        padding: 3px 5px;
+
+        &:hover {
+            background-color: lightgray;
+            cursor: pointer;
+            transition: all 0.5s ease;
+        }
+    }
+}
