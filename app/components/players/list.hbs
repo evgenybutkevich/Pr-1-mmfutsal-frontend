@@ -3,15 +3,7 @@
         <th {{on "click" (fn @onHeaderClick 'id')}}>id</th>
         <th {{on "click" (fn @onHeaderClick 'firstName')}}>First name</th>
         <th {{on "click" (fn @onHeaderClick 'lastName')}}>Last name</th>
-        <th>
-            Records on page
-            <PowerSelect
-                @options={{@limitValues}}
-                @selected={{@limit}}
-                @onChange={{@selectLimit}} as |limit|>
-                {{limit}}
-            </PowerSelect>
-        </th>
+        <th></th>
    </tr>
 
     {{#each @players as |player|}}
