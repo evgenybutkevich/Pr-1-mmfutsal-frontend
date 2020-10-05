@@ -1,35 +1,23 @@
 <div>
-    <h3 style="float: left;">PLAYERS LIST, <LinkTo @route="players.create">Create new player</LinkTo>
+    <h3>PLAYERS LIST, <LinkTo @route="players.create">Create new player</LinkTo>
     </h3>
 </div>
 
-<label>
-    <span>
-        Filter field
-    </span>
+<FilterInputGroup
+    @filterFieldValues={{this.filterFieldValues}}
+    @field={{this.field}}
+    @value={{this.value}}
 
-    <PowerSelect
-        @options={{this.filterFieldValues}}
-        @selected={{this.filterField}}
-        @onChange={{this.selectFilterField}} as |field|>
-        {{field}}
-    </PowerSelect>
-</label>
+    @onFilterClick={{this.onFilterClick}}/>
 
-<label>
-    <span>
-        Filter value
-    </span>
-
-    <Input id="filterValue" @value={{value}} />
-    <button {{on "click" (fn this.onFilterClick)}}>Filter</button>
-</label>
-
-<Players::List
-    @players={{model}}
+<ModelTableGroup
+    @tableData={{this.tableData}}
+    @models={{model}}
 
     @onHeaderClick={{this.onHeaderClick}}
-    @sortDirection={{this.sortDirection}} />
+    @sortField={{this.sortField}}
+    @sortDirection={{this.sortDirection}}
+    @sortDirectionArrow={{this.sortDirectionArrow}}/>
 
 <PaginationGroup
     @page={{this.page}}
