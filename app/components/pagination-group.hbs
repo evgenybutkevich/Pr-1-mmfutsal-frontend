@@ -1,0 +1,37 @@
+<section class="pagination-group">
+    <section class="page-group">
+        <ul class="page-list">
+            <li
+                class={{if (eq @page 1) "page-item inactive" "page-item"}}
+                {{on "click" @onPageDecrementClick}}>
+                &laquo;
+            </li>
+
+            {{#each @pageValues as |pageValue|}}
+                <li
+                    class={{if (eq @page pageValue) "page-item active" "page-item"}}
+                    {{on "click" (fn @onPageClick pageValue)}}>
+                    {{pageValue}}
+                </li>
+            {{/each}}
+
+            <li
+                class={{if (eq @page @pageValuesLength) "page-item inactive" "page-item"}}
+                {{on "click" @onPageIncrementClick}}>
+                &raquo;
+            </li>
+        </ul>
+    </section>
+
+    <section class="limit-group">
+        <ul class="limit-list">
+            {{#each @limitValues as |limitValue|}}
+                <li
+                    class={{if (eq @limit limitValue) "limit-item active" "limit-item"}}
+                    {{on "click" (fn @onLimitClick limitValue)}}>
+                    {{limitValue}}
+                </li>
+            {{/each}}
+        </ul>
+    </section>
+</section>
