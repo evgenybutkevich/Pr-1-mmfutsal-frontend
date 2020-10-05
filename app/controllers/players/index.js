@@ -4,6 +4,8 @@ import { tracked } from '@glimmer/tracking';
 
 const ASCENDING_DIRECTION = 'ASC';
 const DESCENDING_DIRECTION = 'DESC';
+const DOWN_ARROW = '&darr;';
+const UP_ARROW = '&uarr;';
 
 export default class IndexController extends Controller {
     get pageArray() {
@@ -17,6 +19,7 @@ export default class IndexController extends Controller {
 
     @tracked sortField = 'id';
     @tracked sortDirection = ASCENDING_DIRECTION;
+    @tracked sortDirectionArrow = DOWN_ARROW;
 
     @tracked page = 1;
     @tracked limit = 5;
@@ -24,6 +27,21 @@ export default class IndexController extends Controller {
     resetPage() {
         this.page = 1;
     }
+
+    tableData = [
+        {
+            description: 'ID',
+            fieldName: 'id'
+        },
+        {
+            description: 'First name',
+            fieldName: 'firstName'
+        },
+        {
+            description: 'Last name',
+            fieldName: 'lastName'
+        }
+    ]
 
     filterFieldValues = [
         'firstName',
@@ -33,12 +51,8 @@ export default class IndexController extends Controller {
     limitValues = [5, 10, 20, 50];
 
     @action
-    selectFilterField(filterField) {
-        this.filterField = filterField;
-    }
-
-    @action
     onFilterClick() {
+        this.filterField = this.field;
         this.filterValue = this.value;
         this.resetPage();
     }
@@ -68,7 +82,7 @@ export default class IndexController extends Controller {
 
     @action
     onPageIncrementClick() {
-        if (this.page == this.pageValues.length) {
+        if (this.page === this.pageValues.length) {
             return;
         }
 
