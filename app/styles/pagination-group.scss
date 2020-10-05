@@ -1,0 +1,79 @@
+.pagination-group {
+    background-color: transparent;
+    display: flex;
+    margin-top: 3vh;
+
+    .page-group {
+        display: flex;
+        font-size: 20px;
+        height: 40px;
+        line-height: 20px;
+
+        .page-list {
+            display: flex;
+            flex-direction: row;
+
+            .page-item {
+                color: black;
+                cursor: pointer;
+                display: block;
+                float: left;
+                list-style: none;
+                padding: 10px 15px;
+                transition: all 0.5s ease;
+
+                &:hover:not(.active) {
+                    background-color:lightgray;
+                }
+
+                &:hover.inactive {
+                    background-color: transparent;
+                }
+
+                &.active {
+                    background-color:gray;
+                    color: white;
+                    cursor: default;
+                }
+
+                &.inactive {
+                    color: lightgray;
+                    cursor: default;
+                }
+            }
+        }
+    }
+
+    .limit-group {
+        display: flex;
+        font-size: 20px;
+        height: 40px;
+        line-height: 20px;
+        margin-left: auto;
+
+        .limit-list {
+            display: flex;
+            flex-direction: row;
+
+            .limit-item {
+                color: black;
+                cursor: pointer;
+                display: block;
+                float: left;
+                list-style: none;
+                padding: 10px 15px;
+                transition: all 0.5s ease;
+
+                &:hover:not(.active) {
+                    background-color:lightgray;
+                }
+
+                &.active {
+                    background-color:gray;
+                    color: white;
+                    cursor: default;
+                }
+            }
+        }
+    }
+}

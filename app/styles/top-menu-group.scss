@@ -1,0 +1,74 @@
+.top-menu-group {
+    background-color: white;
+    display: block;
+    font-size: 20px;
+    height: 60px;
+    left: 0;
+    line-height: 20px;
+    position: fixed;
+    right: 0;
+    top: 0;
+
+    .menu-list {
+        display: block;
+
+        .menu-item {
+            display: block;
+            float: left;
+            list-style: none;
+            padding: 20px;
+            position: relative;
+            transition: all 0.5s ease;
+
+            &:hover {
+                background-color:lightgray;
+                cursor: pointer;
+            }
+
+            &:hover > .dropdown-list {
+                display: block;
+                opacity: 1;
+                visibility: visible;
+            }
+
+            &.active {
+                background-color:gray;
+            }
+
+            .dropdown-list {
+                background-color:white;
+                display: none;
+                left: 0;
+                margin-top: 20px;
+                position: absolute;
+                width: 100%;
+                visibility: hidden;
+
+                &:hover {
+                    display: block;
+                    opacity: 1;
+                    visibility: visible;
+                }
+
+                .dropdown-item {
+                    clear: both;
+                    display: block;
+                    list-style: none;
+                    padding: 20px;
+                    transition: all 0.5s ease;
+
+                    &:hover {
+                        background-color: lightgray;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+
+    a {
+        color: black;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+}
