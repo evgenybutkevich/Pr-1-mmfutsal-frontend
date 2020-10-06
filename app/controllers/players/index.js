@@ -24,7 +24,7 @@ export default class IndexController extends Controller {
     @tracked page = 1;
     @tracked limit = 5;
 
-    tableData = [
+    modelData = [
         {
             description: 'ID',
             fieldName: 'id'
