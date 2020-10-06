@@ -1,0 +1,33 @@
+<table class="table-group">
+    <tr class="table-group-header-row">
+        {{#each @tableData as |data|}}
+            <th class="table-group-header" {{on "click" (fn @onHeaderClick data.fieldName)}}>
+                {{data.description}} {{{if (eq @sortField data.fieldName) @sortDirectionArrow}}}
+            </th>
+        {{/each}}
+        
+        <th class="table-group-header inactive">
+            {{!-- column for buttons --}}
+        </th>
+    </tr>
+
+    {{#each @models as |model|}}
+        {{#if model.id}}
+            <tr class="table-group-row">
+                {{#each @tableData as |data|}}
+                    <td class="table-group-data">{{get model data.fieldName}}</td>
+                {{/each}}
+
+                <td class="table-group-data">
+                    <button class="table-group-button">
+                        <LinkTo @route="players.view" @model={{model.id}}>View</LinkTo>
+                    </button>
+
+                    <button class="table-group-button">
+                        <LinkTo @route="players.update" @model={{model.id}}>Update</LinkTo>
+                    </button>
+                </td>
+            </tr>
+        {{/if}}
+    {{/each}}
+</table>

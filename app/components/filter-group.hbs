@@ -1,0 +1,13 @@
+<section class="filter-group">
+    <section class="filter-field-group">
+        <Input id="filter-field" class="filter-group-input" type="text" @value={{@field}} required />
+        <label for="filter-field" class="filter-group-label">Filter field</label>
+    </section>
+
+    <section class="filter-value-group">
+        <Input id="filter-value" class="filter-group-input" type="text" @value={{@value}} required />
+        <label for="filter-value" class="filter-group-label">Filter value</label>
+    </section>
+
+    <button class="filter-group-button" {{on "click" (fn @onFilterClick)}}>Filter</button>
+</section>
