@@ -8,7 +8,7 @@ const DOWN_ARROW = '&darr;';
 const UP_ARROW = '&uarr;';
 
 export default class IndexController extends Controller {
-    get pageArray() {
+    get pageValues() {
         let array = new Array(Math.ceil(this.model.meta.count / this.limit)).fill().map((_, i) => i + 1);
 
         return array;
@@ -43,10 +43,13 @@ export default class IndexController extends Controller {
         }
     ]
 
-    filterFieldValues = [
-        'firstName',
-        'lastName'
-    ]
+    resetPage() {
+        this.page = 1;
+    }
+
+    movePage(amount) {
+        this.page += amount;
+    }
 
     limitValues = [5, 10, 20, 50];
 
@@ -63,16 +66,10 @@ export default class IndexController extends Controller {
         this.sortDirection = (this.sortDirection === ASCENDING_DIRECTION)
             ? DESCENDING_DIRECTION
             : ASCENDING_DIRECTION;
+        this.sortDirectionArrow = (this.sortDirection === ASCENDING_DIRECTION)
+            ? DOWN_ARROW
+            : UP_ARROW;
         this.resetPage();
-    }
-
-    @action
-    onPageDecrementClick() {
-        if (this.page === 1) {
-            return;
-        }
-
-        this.page -= 1;
     }
 
     @action
@@ -81,12 +78,16 @@ export default class IndexController extends Controller {
     }
 
     @action
-    onPageIncrementClick() {
-        if (this.page === this.pageValues.length) {
+    onPageArrowClick(amount) {
+        if (this.page === 1 && amount === -1) {
             return;
         }
 
-        this.page += 1;
+        if (this.page === this.pageValues.length && amount === 1) {
+            return;
+        }
+
+        this.movePage(amount);
     }
 
     @action
