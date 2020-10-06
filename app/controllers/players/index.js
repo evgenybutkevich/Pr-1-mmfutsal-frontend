@@ -7,11 +7,7 @@ const DESCENDING_DIRECTION = 'DESC';
 
 export default class IndexController extends Controller {
     get pageArray() {
-        let array = []
-
-        for (let index = 1; index <= Math.ceil(this.model.meta.count / this.limit); index++) {
-            array.push(index);
-        }
+        let array = new Array(Math.ceil(this.model.meta.count / this.limit)).fill().map((_, i) => i + 1);
 
         return array;
     }
