@@ -1,7 +1,8 @@
 .filter-group {
     display: flex;
     flex-direction: row;
-    margin-top: 3vh;
+    justify-content: flex-end;
+    padding: 2vh 0;
 
     .filter-field-group,
     .filter-value-group {
