@@ -25,6 +25,10 @@ export default class IndexController extends Controller {
     @tracked page = 1;
     @tracked limit = 5;
 
+    resetPage() {
+        this.page = 1;
+    }
+
     filterFieldValues = [
         'firstName',
         'lastName'
@@ -40,19 +44,16 @@ export default class IndexController extends Controller {
     @action
     onFilterClick() {
         this.filterValue = this.value;
-
-        this.page = 1;
+        this.resetPage();
     }
 
     @action
     onHeaderClick(sortField) {
         this.sortField = sortField;
-
         this.sortDirection = (this.sortDirection === ASCENDING_DIRECTION)
             ? DESCENDING_DIRECTION
             : ASCENDING_DIRECTION;
-
-        this.page = 1;
+        this.resetPage();
     }
 
     @action
@@ -63,7 +64,6 @@ export default class IndexController extends Controller {
     @action
     selectLimit(limit) {
         this.limit = limit;
-
-        this.page = 1;
+        this.resetPage();
     }
 }
