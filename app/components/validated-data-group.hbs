@@ -1,0 +1,17 @@
+<section class="validated-data-group">
+    <section class="data-group">
+        <Input
+                id={{@id}}
+                type={{@type}}
+                class="data-group-input"
+                @value={{@value}}
+                required
+                @focus-out={{this.onFocusOut}}
+        />
+        <label for={{@id}} class="data-group-label">{{@label}}</label>
+    </section>
+
+    {{#if this.showValidationError}}
+        <p class='error'>{{@validationError}}</p>
+    {{/if}}
+</section>

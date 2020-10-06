@@ -1,17 +1,19 @@
-<h3>player create</h3>
+<h3>PLAYER CREATE</h3>
 
-<ValidatedInputGroup
-    @label="first name"
+<ValidatedDataGroup
+    @id="firstName"
     @type="text"
     @value={{model.firstName}}
-    @placeholder="Enter first name"
-    @validationError={{model.validations.attrs.firstName.message}} />
+    @label="First name"
+    @validationError={{model.validations.attrs.firstName.message}}
+/>
 
-<ValidatedInputGroup
-    @label="last name"
+<ValidatedDataGroup
+    @id="lastName"
     @type="text"
     @value={{model.lastName}}
-    @placeholder="Enter last name"
-    @validationError={{model.validations.attrs.lastName.message}} />
+    @label="Last name"
+    @validationError={{model.validations.attrs.lastName.message}}
+/>
 
 <button {{on "click" this.create}}>Create</button>
