@@ -58,13 +58,17 @@ export default class IndexController extends Controller {
 
     @action
     onHeaderClick(sortField) {
-        this.sortField = sortField;
-        this.sortDirection = (this.sortDirection === ASCENDING_DIRECTION)
-            ? DESCENDING_DIRECTION
-            : ASCENDING_DIRECTION;
-        this.sortDirectionArrow = (this.sortDirection === ASCENDING_DIRECTION)
-            ? DOWN_ARROW
-            : UP_ARROW;
+        if (this.sortField === sortField) {
+            this.sortDirection = (this.sortDirection === ASCENDING_DIRECTION)
+                ? DESCENDING_DIRECTION
+                : ASCENDING_DIRECTION;
+            this.sortDirectionArrow = (this.sortDirection === ASCENDING_DIRECTION)
+                ? DOWN_ARROW
+                : UP_ARROW;
+        } else {
+            this.sortField = sortField;
+        }
+
         this.resetPage();
     }
 
