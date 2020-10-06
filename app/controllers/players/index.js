@@ -28,7 +28,7 @@ export default class IndexController extends Controller {
         this.page = 1;
     }
 
-    tableData = [
+    modelData = [
         {
             description: 'ID',
             fieldName: 'id'

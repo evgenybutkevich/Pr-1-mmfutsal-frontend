@@ -1,11 +1,11 @@
 <table class="table-group">
     <tr class="table-group-header-row">
-        {{#each @tableData as |data|}}
+        {{#each @modelData as |data|}}
             <th class="table-group-header" {{on "click" (fn @onHeaderClick data.fieldName)}}>
                 {{data.description}} {{{if (eq @sortField data.fieldName) @sortDirectionArrow}}}
             </th>
         {{/each}}
-        
+
         <th class="table-group-header inactive">
             {{!-- column for buttons --}}
         </th>
@@ -14,7 +14,7 @@
     {{#each @models as |model|}}
         {{#if model.id}}
             <tr class="table-group-row">
-                {{#each @tableData as |data|}}
+                {{#each @modelData as |data|}}
                     <td class="table-group-data">{{get model data.fieldName}}</td>
                 {{/each}}
 
