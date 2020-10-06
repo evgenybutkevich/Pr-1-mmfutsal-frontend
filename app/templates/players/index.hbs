@@ -11,7 +11,8 @@
     <PowerSelect
         @options={{this.filterFieldValues}}
         @selected={{this.filterField}}
-        @onChange={{this.selectFilterField}} as |field|>
+        @onChange={{this.selectFilterField}} as |field|
+    >
         {{field}}
     </PowerSelect>
 </label>
@@ -33,14 +34,16 @@
 
     @limitValues={{this.limitValues}}
     @limit={{this.limit}}
-    @selectLimit={{this.selectLimit}}/>
+    @selectLimit={{this.selectLimit}}
+/>
 
 <div class="pages">
     <p>Pages</p>
 
     {{#each this.pageArray as |index|}}
     <button class={{if (eq index this.page) "disabled"}} disabled={{if (eq index this.page) "disabled"}}
-        {{on "click" (fn this.onPageClick index)}}>
+        {{on "click" (fn this.onPageClick index)}}
+    >
         {{index}}
     </button>
     {{/each}}
