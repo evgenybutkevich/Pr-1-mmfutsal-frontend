@@ -3,30 +3,31 @@
     </h3>
 </div>
 
-<FilterInputGroup
-    @filterFieldValues={{this.filterFieldValues}}
+<FilterGroup
     @field={{this.field}}
     @value={{this.value}}
 
-    @onFilterClick={{this.onFilterClick}}/>
+    @onFilterClick={{this.onFilterClick}}
+/>
 
-<ModelTableGroup
+<TableGroup
     @tableData={{this.tableData}}
     @models={{model}}
 
     @onHeaderClick={{this.onHeaderClick}}
     @sortField={{this.sortField}}
     @sortDirection={{this.sortDirection}}
-    @sortDirectionArrow={{this.sortDirectionArrow}}/>
+    @sortDirectionArrow={{this.sortDirectionArrow}}
+/>
 
 <PaginationGroup
     @page={{this.page}}
     @pageValues={{this.pageValues}}
     @pageValuesLength={{this.pageValues.length}}
-    @onPageDecrementClick={{this.onPageDecrementClick}}
     @onPageClick={{this.onPageClick}}
-    @onPageIncrementClick={{this.onPageIncrementClick}}
+    @onPageArrowClick={{this.onPageArrowClick}}
 
     @limit={{this.limit}}
     @limitValues={{this.limitValues}}
-    @onLimitClick={{this.onLimitClick}}/>
+    @onLimitClick={{this.onLimitClick}}
+/>

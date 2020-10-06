@@ -9,11 +9,11 @@
         height: 40px;
         line-height: 20px;
 
-        .page-list {
+        .page-group-list {
             display: flex;
             flex-direction: row;
 
-            .page-item {
+            .page-group-item {
                 color: black;
                 cursor: pointer;
                 display: block;
@@ -51,11 +51,11 @@
         line-height: 20px;
         margin-left: auto;
 
-        .limit-list {
+        .limit-group-list {
             display: flex;
             flex-direction: row;
 
-            .limit-item {
+            .limit-group-item {
                 color: black;
                 cursor: pointer;
                 display: block;
