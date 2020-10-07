@@ -1,13 +1,28 @@
 button, button > a {
     color: #fff;
-    background-color: #007bff;
-    border-color: #007bff;
+    background-color: lightskyblue;
+    border: none;
+    outline: 0;
     text-decoration: none;
     padding: 5px 10px 5px;
     border-radius: 5px;
 }
 
-button:hover {
-    color: yellow;
+button:hover:not(.disabled) {
+    background-color: blue;
+    cursor: pointer;
     opacity: 1;
+}
+
+.pages {
+    display: block;
+}
+
+.pages p {
+    display: inline-block;
+}
+
+.pages .disabled {
+    background-color: gray;
+    cursor: default;
 }

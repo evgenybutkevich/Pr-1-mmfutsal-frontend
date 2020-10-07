@@ -13,6 +13,12 @@ export default class IndexRoute extends Route {
         },
         sortDirection: {
             refreshModel: true
+        },
+        page: {
+            refreshModel: true
+        },
+        limit: {
+            refreshModel: true
         }
     };
 
