@@ -55,9 +55,19 @@ export default class IndexController extends Controller {
 
     @action
     onFilterClick() {
+        if (this.field === '' || this.value === '') {
+            return;
+        }
+        
         this.filterField = this.field;
         this.filterValue = this.value;
         this.resetPage();
+    }
+
+    @action
+    onFilterResetClick() {
+        this.filterField = undefined;
+        this.filterValue = undefined;
     }
 
     @action
