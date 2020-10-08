@@ -1,10 +1,11 @@
-<h3>PLAYER CREATE</h3>
+<h1>Player create</h1>
 
 <ValidatedDataGroup
     @id="firstName"
     @type="text"
     @value={{model.firstName}}
     @label="First name"
+    @showAllValidationErrors={{this.showAllValidationErrors}}
     @validationError={{model.validations.attrs.firstName.message}}
 />
 
@@ -13,7 +14,8 @@
     @type="text"
     @value={{model.lastName}}
     @label="Last name"
+    @showAllValidationErrors={{this.showAllValidationErrors}}
     @validationError={{model.validations.attrs.lastName.message}}
 />
 
-<button {{on "click" this.create}}>Create</button>
+<button class="create-model" {{on "click" this.create}}>Create</button>
