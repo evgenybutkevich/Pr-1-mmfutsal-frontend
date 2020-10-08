@@ -1,32 +1,36 @@
-<table class="table-group">
-    <tr class="table-group-header-row">
-        {{#each @modelData as |data|}}
-            <th class="table-group-header" {{on "click" (fn @onHeaderClick data.fieldName)}}>
-                {{data.description}} {{{if (eq @sortField data.fieldName) @sortDirectionArrow}}}
+{{#if (eq @models.length 0)}}
+    <p class="empty-model">No records find</p>
+{{else}}
+    <table class="table-group">
+        <tr class="table-group-header-row">
+            {{#each @modelData as |data|}}
+                <th class="table-group-header" {{on "click" (fn @onHeaderClick data.fieldName)}}>
+                    {{data.description}} {{{if (eq @sortField data.fieldName) @sortDirectionArrow}}}
+                </th>
+            {{/each}}
+
+            <th class="table-group-header inactive">
+                {{!-- column for buttons --}}
             </th>
+        </tr>
+
+        {{#each @models as |model|}}
+            {{#if model.id}}
+                <tr class="table-group-row" {{on "click" (fn @onRowClick model.id)}}>
+                    {{#each @modelData as |data|}}
+                        <td class="table-group-data">{{get model data.fieldName}}</td>
+                    {{/each}}
+
+                    <td class="table-group-data">
+                        <button class="table-group-button" {{on "click" (fn @onViewButtonClick model.id)}}>
+                            View
+                        </button>
+                        <button class="table-group-button" {{on "click" (fn @onEditButtonClick model.id)}}>
+                            Edit
+                        </button>
+                    </td>
+                </tr>
+            {{/if}}
         {{/each}}
-
-        <th class="table-group-header inactive">
-            {{!-- column for buttons --}}
-        </th>
-    </tr>
-
-    {{#each @models as |model|}}
-        {{#if model.id}}
-            <tr class="table-group-row" {{on "click" (fn @onRowClick model.id)}}>
-                {{#each @modelData as |data|}}
-                    <td class="table-group-data">{{get model data.fieldName}}</td>
-                {{/each}}
-
-                <td class="table-group-data">
-                    <button class="table-group-button" {{on "click" (fn @onViewButtonClick model.id)}}>
-                        View
-                    </button>
-                    <button class="table-group-button" {{on "click" (fn @onEditButtonClick model.id)}}>
-                        Edit
-                    </button>
-                </td>
-            </tr>
-        {{/if}}
-    {{/each}}
-</table>
+    </table>
+{{/if}}
