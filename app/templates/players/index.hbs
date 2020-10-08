@@ -1,23 +1,27 @@
-<div>
-    <h3>PLAYERS LIST, <LinkTo @route="players.create">Create new player</LinkTo>
-    </h3>
-</div>
+<h1>PLAYERS LIST</h1>
+
+<section class="filter-create-group">
+    <FilterGroup
+        @field={{this.field}}
+        @value={{this.value}}
+        @onFilterClick={{this.onFilterClick}}
+        @onFilterResetClick={{this.onFilterResetClick}}
+    />
+
+    <button {{on "click" (fn this.onCreateButtonClick)}}>Create</button>
+</section>
 
 <TableGroup
     @modelData={{this.modelData}}
     @models={{model}}
 
     @onHeaderClick={{this.onHeaderClick}}
+    @onRowClick={{this.onRowClick}}
+    @onViewButtonClick={{this.onViewButtonClick}}
+    @onEditButtonClick={{this.onEditButtonClick}}
     @sortField={{this.sortField}}
     @sortDirection={{this.sortDirection}}
     @sortDirectionArrow={{this.sortDirectionArrow}}
-/>
-
-<FilterGroup
-    @field={{this.field}}
-    @value={{this.value}}
-    @onFilterClick={{this.onFilterClick}}
-    @onFilterResetClick={{this.onFilterResetClick}}
 />
 
 <PaginationGroup
