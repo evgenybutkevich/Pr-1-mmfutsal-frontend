@@ -2,7 +2,7 @@
     <section class="page-group">
         <ul class="page-group-list">
             <li
-                class={{if (eq @page 1) "page-group-item inactive" "page-group-item"}}
+                class={{if (or (eq @page 1) (eq @pageValuesLength 0)) "page-group-item inactive" "page-group-item"}}
                 {{on "click" (fn @onPageArrowClick -1)}}
             >
                 &laquo;
@@ -18,7 +18,8 @@
             {{/each}}
 
             <li
-                class={{if (eq @page @pageValuesLength) "page-group-item inactive" "page-group-item"}}
+                class={{if (or (eq @page @pageValuesLength) (eq @pageValuesLength 0))
+                    "page-group-item inactive" "page-group-item"}}
                 {{on "click" (fn @onPageArrowClick 1)}}
             >
                 &raquo;

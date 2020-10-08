@@ -111,6 +111,10 @@ export default class IndexController extends Controller {
 
     @action
     onPageArrowClick(amount) {
+        if (this.pageValues.length === 0) {
+            return;
+        }
+
         if (this.page === 1 && amount === -1) {
             return;
         }
