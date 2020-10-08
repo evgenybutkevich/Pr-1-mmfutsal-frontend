@@ -58,7 +58,7 @@ export default class IndexController extends Controller {
         if (this.field === '' || this.value === '') {
             return;
         }
-        
+
         this.filterField = this.field;
         this.filterValue = this.value;
         this.resetPage();
@@ -84,6 +84,23 @@ export default class IndexController extends Controller {
         }
 
         this.resetPage();
+    }
+
+    @action
+    onRowClick(id) {
+        this.transitionToRoute('players.view', id);
+    }
+
+    @action
+    onViewButtonClick(id, event) {
+        event.preventDefault();
+        this.transitionToRoute('players.view', id);
+    }
+
+    @action
+    onEditButtonClick(id, event) {
+        event.preventDefault();
+        this.transitionToRoute('players.update', id);
     }
 
     @action
