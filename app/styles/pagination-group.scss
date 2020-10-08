@@ -1,25 +1,24 @@
 .pagination-group {
     background-color: transparent;
     display: flex;
-    padding: 2vh 0;
+    font-size: 20px;
+    justify-content: space-between;
+    height: 39px;
+    margin-top: 20px;
 
     .page-group {
-        display: flex;
-        font-size: 20px;
-        height: 40px;
-        line-height: 20px;
+        display: inline-flex;
 
         .page-group-list {
+            align-items: center;
             display: flex;
             flex-direction: row;
 
             .page-group-item {
                 color: black;
                 cursor: pointer;
-                display: block;
-                float: left;
                 list-style: none;
-                padding: 10px 15px;
+                padding: 6px 15px;
                 transition: all 0.5s ease;
 
                 &:hover:not(.active) {
@@ -45,23 +44,18 @@
     }
 
     .limit-group {
-        display: flex;
-        font-size: 20px;
-        height: 40px;
-        line-height: 20px;
-        margin-left: auto;
+        display: inline-flex;
 
         .limit-group-list {
+            align-items: center;
             display: flex;
             flex-direction: row;
 
             .limit-group-item {
                 color: black;
                 cursor: pointer;
-                display: block;
-                float: left;
                 list-style: none;
-                padding: 10px 15px;
+                padding: 6px 15px;
                 transition: all 0.5s ease;
 
                 &:hover:not(.active) {
