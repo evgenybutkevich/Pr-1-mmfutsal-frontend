@@ -1,67 +1,52 @@
 .menu-group {
     background-color: white;
-    display: block;
+    border-bottom: 1px solid black;
     font-size: 20px;
-    height: 60px;
+    height: 55px;
     left: 0;
-    line-height: 20px;
     position: fixed;
     right: 0;
     top: 0;
     z-index: 100;
 
     .menu-group-list {
-        display: block;
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        height: inherit;
 
         .menu-group-item {
-            display: block;
-            float: left;
+            display: inline-flex;
             list-style: none;
-            padding: 20px;
             position: relative;
-            transition: all 0.5s ease;
-
-            &:hover {
-                background-color:lightgray;
-                cursor: pointer;
-            }
 
             &:hover > .menu-dropdown-list {
-                display: block;
-                opacity: 1;
+                outline: 1px solid black;
+                display: flex;
+                flex-direction: column;
                 visibility: visible;
-            }
-
-            &.active {
-                background-color:gray;
             }
 
             .menu-dropdown-list {
                 background-color:white;
                 display: none;
                 left: 0;
-                margin-top: 20px;
+                margin-top: 56px;
                 position: absolute;
                 width: 100%;
                 visibility: hidden;
 
                 &:hover {
-                    display: block;
-                    opacity: 1;
+                    display: flex;
+                    flex-direction: column;
+                    height: inherit;
                     visibility: visible;
                 }
 
                 .menu-dropdown-item {
+                    display: inline-flex;
                     clear: both;
-                    display: block;
                     list-style: none;
-                    padding: 20px;
-                    transition: all 0.5s ease;
-
-                    &:hover {
-                        background-color: lightgray;
-                        cursor: pointer;
-                    }
                 }
             }
         }
@@ -69,7 +54,15 @@
 
     a {
         color: black;
+        padding: 14px 20px;
         text-decoration: none;
         text-transform: uppercase;
+        transition: all 0.5s ease;
+        width: 100%;
+
+        &:hover {
+            background-color:lightgray;
+            cursor: pointer;
+        }
     }
 }
