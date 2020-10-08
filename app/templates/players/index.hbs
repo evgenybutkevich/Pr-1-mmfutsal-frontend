@@ -3,12 +3,6 @@
     </h3>
 </div>
 
-<FilterGroup
-    @field={{this.field}}
-    @value={{this.value}}
-    @onFilterClick={{this.onFilterClick}}
-/>
-
 <TableGroup
     @modelData={{this.modelData}}
     @models={{model}}
@@ -17,6 +11,12 @@
     @sortField={{this.sortField}}
     @sortDirection={{this.sortDirection}}
     @sortDirectionArrow={{this.sortDirectionArrow}}
+/>
+
+<FilterGroup
+    @field={{this.field}}
+    @value={{this.value}}
+    @onFilterClick={{this.onFilterClick}}
 />
 
 <PaginationGroup
