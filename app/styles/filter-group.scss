@@ -1,7 +1,7 @@
 .filter-group {
+    align-items: center;
     display: flex;
     flex-direction: row;
-    margin-top: 20px;
 
     .filter-field-group,
     .filter-value-group {
@@ -39,12 +39,10 @@
     .filter-group-button {
         background-color: transparent;
         margin-right: 20px;
-        padding: 0 30px;
+        padding: 10px 30px;
 
         &:hover {
             background-color: lightgray;
-            cursor: pointer;
-            transition: all 0.5s ease;
         }
     }
 }
