@@ -11,3 +11,16 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+button {
+    border: none;
+    border-bottom: 1px solid black;
+    border-left: 2px solid black;
+    border-radius: 50%;
+    outline: 0;
+
+    &:hover {
+        cursor: pointer;
+        transition: all 0.5s ease;
+    }
+}
