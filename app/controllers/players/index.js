@@ -88,6 +88,11 @@ export default class IndexController extends Controller {
     }
 
     @action
+    onCreateButtonClick() {
+        this.transitionToRoute('players.create');
+    }
+
+    @action
     onViewButtonClick(id, event) {
         event.preventDefault();
         this.transitionToRoute('players.view', id);
