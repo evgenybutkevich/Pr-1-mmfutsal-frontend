@@ -1,7 +1,10 @@
 import Controller from '@ember/controller';
 import { action } from '@ember/object';
+import { tracked } from '@glimmer/tracking';
 
 export default class CreateController extends Controller {
+    @tracked showAllValidationErrors = false;
+
     @action
     create() {
         const player = this.get('model');
@@ -9,14 +12,12 @@ export default class CreateController extends Controller {
         player.validate()
             .then(({ validations }) => {
                 if (validations.get('isValid')) {
-                    if (!confirm('Are you sure?!')) {
-                        return;
-                    }
-
                     player.save()
                         .then(() => {
                             this.transitionToRoute('players.index');
                         });
+                } else {
+                    this.showAllValidationErrors = true;
                 }
             });
     }
