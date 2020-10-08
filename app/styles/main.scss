@@ -8,6 +8,7 @@
 h1 {
     font-size: 30px;
     text-align: center;
+    text-transform: uppercase;
 }
 
 body {
@@ -28,4 +29,13 @@ button {
         cursor: pointer;
         transition: all 0.5s ease;
     }
+}
+
+.empty-model {
+    border: 1px solid red;
+    color: red;
+    margin-top: 20px;
+    padding: 10px;
+    text-align: center;
+    text-transform: uppercase;
 }
