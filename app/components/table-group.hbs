@@ -13,18 +13,17 @@
 
     {{#each @models as |model|}}
         {{#if model.id}}
-            <tr class="table-group-row">
+            <tr class="table-group-row" {{on "click" (fn @onRowClick model.id)}}>
                 {{#each @modelData as |data|}}
                     <td class="table-group-data">{{get model data.fieldName}}</td>
                 {{/each}}
 
                 <td class="table-group-data">
-                    <button class="table-group-button">
-                        <LinkTo @route="players.view" @model={{model.id}}>View</LinkTo>
+                    <button class="table-group-button" {{on "click" (fn @onViewButtonClick model.id)}}>
+                        View
                     </button>
-
-                    <button class="table-group-button">
-                        <LinkTo @route="players.update" @model={{model.id}}>Update</LinkTo>
+                    <button class="table-group-button" {{on "click" (fn @onEditButtonClick model.id)}}>
+                        Edit
                     </button>
                 </td>
             </tr>
