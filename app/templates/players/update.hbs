@@ -1,19 +1,22 @@
-<h3>player update</h3>
+<h1>Player update</h1>
 
-<ValidatedInputGroup
-    @label="first name"
+<ValidatedDataGroup
+    @id="firstName"
     @type="text"
     @value={{model.firstName}}
-    @placeholder="Enter first name"
+    @label="First name"
+    @showAllValidationErrors={{this.showAllValidationErrors}}
     @validationError={{model.validations.attrs.firstName.message}}
 />
 
-<ValidatedInputGroup
-    @label="last name"
+<ValidatedDataGroup
+    @id="lastName"
     @type="text"
     @value={{model.lastName}}
-    @placeholder="Enter last name"
+    @label="Last name"
+    @showAllValidationErrors={{this.showAllValidationErrors}}
     @validationError={{model.validations.attrs.lastName.message}}
 />
 
-<button {{on "click" this.update}}>Update</button>
+<button class="update-model" {{on "click" this.update}}>Update</button>
+<button class="update-model" {{on "click" (fn this.onCancelButtonClick)}}>Cancel</button>
