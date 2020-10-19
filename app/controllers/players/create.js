@@ -21,4 +21,9 @@ export default class CreateController extends Controller {
                 }
             });
     }
+
+    @action
+    onCancelButtonClick() {
+        this.transitionToRoute('players.index');
+    }
 }
