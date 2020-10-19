@@ -15,7 +15,9 @@ export default class IndexController extends Controller {
     }
 
     @tracked filterField;
+    @tracked filterFieldContent = this.filterField;
     @tracked filterValue;
+    @tracked filterValueContent = this.filterValue;
 
     @tracked sortField = 'id';
     @tracked sortDirection = ASCENDING_DIRECTION;
@@ -28,20 +30,33 @@ export default class IndexController extends Controller {
         this.page = 1;
     }
 
-    modelData = [
+    selectOptions = [
         {
-            description: 'ID',
-            fieldName: 'id'
+            text: 'First name',
+            value: 'firstName'
         },
         {
-            description: 'First name',
-            fieldName: 'firstName'
-        },
-        {
-            description: 'Last name',
-            fieldName: 'lastName'
+            text: 'Last name',
+            value: 'lastName'
         }
     ]
+
+    tableOptions = [
+        {
+            text: 'ID',
+            value: 'id'
+        },
+        {
+            text: 'First name',
+            value: 'firstName'
+        },
+        {
+            text: 'Last name',
+            value: 'lastName'
+        }
+    ]
+
+    limitValues = [5, 10, 20, 50];
 
     resetPage() {
         this.page = 1;
@@ -51,23 +66,29 @@ export default class IndexController extends Controller {
         this.page += amount;
     }
 
-    limitValues = [5, 10, 20, 50];
+    @action
+    choseFilterField(selectedObject) {
+        this.filterFieldContent = selectedObject.value;
+    }
 
     @action
     onFilterClick() {
-        if (this.field === '' || this.value === '') {
+        if (this.filterValueContent === '') {
+            this.filterValue = undefined;
             return;
         }
 
-        this.filterField = this.field;
-        this.filterValue = this.value;
+        this.filterField = this.filterFieldContent;
+        this.filterValue = this.filterValueContent;
         this.resetPage();
     }
 
     @action
     onFilterResetClick() {
         this.filterField = undefined;
+        this.filterFieldContent = undefined;
         this.filterValue = undefined;
+        this.filterValueContent = undefined;
     }
 
     @action
