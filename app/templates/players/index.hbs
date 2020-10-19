@@ -2,8 +2,11 @@
 
 <section class="filter-create-group">
     <FilterGroup
-        @field={{this.field}}
-        @value={{this.value}}
+        @selectOptions={{this.selectOptions}}
+        @filterFieldContent={{this.filterFieldContent}}
+        @choseFilterField={{this.choseFilterField}}
+
+        @filterValueContent={{this.filterValueContent}}
         @onFilterClick={{this.onFilterClick}}
         @onFilterResetClick={{this.onFilterResetClick}}
     />
@@ -12,7 +15,7 @@
 </section>
 
 <TableGroup
-    @modelData={{this.modelData}}
+    @tableOptions={{this.tableOptions}}
     @models={{model}}
 
     @onHeaderClick={{this.onHeaderClick}}
@@ -22,9 +25,7 @@
     @sortField={{this.sortField}}
     @sortDirection={{this.sortDirection}}
     @sortDirectionArrow={{this.sortDirectionArrow}}
-/>
 
-<PaginationGroup
     @page={{this.page}}
     @pageValues={{this.pageValues}}
     @pageValuesLength={{this.pageValues.length}}
