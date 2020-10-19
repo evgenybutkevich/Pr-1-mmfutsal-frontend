@@ -2,13 +2,4 @@
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
-
-    button {
-        background-color:lightgreen;
-        padding: 10px 30px;
-
-        &:hover {
-            background-color: lightgray;
-        }
-    }
 }

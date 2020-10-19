@@ -3,46 +3,48 @@
     display: flex;
     flex-direction: row;
 
-    .filter-field-group,
-    .filter-value-group {
+    .filter-field-group {
         background-color: white;
         border: 1px solid black;
         display: inline-flex;
         margin-right: 20px;
         position: relative;
 
-        .filter-group-input {
+        .ember-view {
             border: none;
-            font-size: 15px;
-            outline: 0;
+            display: flex;
+            min-height: 21px;
+            outline: none;
             padding: 20px 5px 5px 5px;
+            width: 290px;
 
-            &:focus+.filter-group-label,
-            &:valid+.filter-group-label {
+            &.ember-basic-dropdown-trigger--below+.ember-power-select-placeholder {
                 color: gray;
                 transform: translate(0, 2px) scale(0.9);
                 transition: all 0.3s ease;
             }
-        }
 
-        .filter-group-label {
-            font-size: 16px;
-            left: 5px;
-            position: absolute;
-            top: 0;
-            transform: translate(0, 20px) scale(1);
-            transform-origin: top left;
-            transition: all 0.3s ease;
-        }
-    }
+            .ember-power-select-placeholder {
+                color: black;
+                font-size: 16px;
+                left: 5px;
+                line-height: 21px;
+                margin: 0;
+                position: absolute;
+                top: 0;
+                transform: translate(0, 20px) scale(1);
+                transform-origin: top left;
+                transition: all 0.3s ease;
+            }
 
-    .filter-group-button {
-        background-color: transparent;
-        margin-right: 20px;
-        padding: 10px 30px;
-
-        &:hover {
-            background-color: lightgray;
+            .ember-power-select-selected-item {
+                display: inline-flex;
+                font-size: 15px;
+                align-items: flex-end;
+                line-height: 15px;
+                margin-left: 0;
+                vertical-align: bottom;
+            }
         }
     }
 }

@@ -1,9 +1,13 @@
-@import './main.scss';
+@import 'ember-power-select';
+
+@import './global/global.scss';
+
+@import './components/input-section.scss';
+@import './components/menu-section.scss';
 
 @import './filter-create-group.scss';
 @import './filter-group.scss';
 @import './pagination-group.scss';
 @import './table-group.scss';
-@import './menu-group.scss';
 @import './wrapper.scss';
 @import './validated-data-group.scss';
