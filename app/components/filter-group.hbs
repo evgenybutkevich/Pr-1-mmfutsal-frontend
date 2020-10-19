@@ -1,13 +1,12 @@
 <section class="filter-group">
     <section class="filter-field-group">
-        <Input id="filter-field" class="filter-group-input" type="text" @value={{@field}} required />
-        <label for="filter-field" class="filter-group-label">Filter field</label>
+        <PowerSelect @options={{@selectOptions}} @selected={{this.selectedObject}} @placeholder='Filter field'
+            @onChange={{@choseFilterField}} as |object|>
+            {{object.text}}
+        </PowerSelect>
     </section>
 
-    <section class="filter-value-group">
-        <Input id="filter-value" class="filter-group-input" type="text" @value={{@value}} required />
-        <label for="filter-value" class="filter-group-label">Filter value</label>
-    </section>
+    <InputSection @id="filter-value" @type="text" @value={{@value}} @label="Filter value" />
 
     <button class="filter-group-button" {{on "click" (fn @onFilterClick)}}>Filter</button>
     <button class="filter-group-button" {{on "click" (fn @onFilterResetClick)}}>Reset</button>
