@@ -3,9 +3,12 @@
 {{else}}
     <table class="table-group">
         <tr class="table-group-header-row">
-            {{#each @modelData as |data|}}
-                <th class="table-group-header" {{on "click" (fn @onHeaderClick data.fieldName)}}>
-                    {{data.description}} {{{if (eq @sortField data.fieldName) @sortDirectionArrow}}}
+            {{#each @tableOptions as |object|}}
+                <th class={{if (eq @sortField object.value) "table-group-header sorted" "table-group-header"}}
+                    {{on "click" (fn @onHeaderClick object.value)}}>
+                    <p class={{if (eq @sortDirection 'ASC') "asc" "desc"}}>
+                        {{object.text}}
+                    </p>
                 </th>
             {{/each}}
 
@@ -17,8 +20,8 @@
         {{#each @models as |model|}}
             {{#if model.id}}
                 <tr class="table-group-row" {{on "click" (fn @onRowClick model.id)}}>
-                    {{#each @modelData as |data|}}
-                        <td class="table-group-data">{{get model data.fieldName}}</td>
+                    {{#each @tableOptions as |object|}}
+                        <td class="table-group-data">{{get model object.value}}</td>
                     {{/each}}
 
                     <td class="table-group-data">
@@ -33,4 +36,8 @@
             {{/if}}
         {{/each}}
     </table>
+
+<PaginationGroup @page={{@page}} @pageValues={{@pageValues}} @pageValuesLength={{@pageValuesLength}}
+    @onPageClick={{@onPageClick}} @onPageArrowClick={{@onPageArrowClick}} @limit={{@limit}}
+    @limitValues={{@limitValues}} @onLimitClick={{@onLimitClick}} />
 {{/if}}
