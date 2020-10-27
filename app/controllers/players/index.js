@@ -9,9 +9,9 @@ const UP_ARROW = '&uarr;';
 
 export default class IndexController extends Controller {
     get pageValues() {
-        let array = new Array(Math.ceil(this.model.meta.count / this.limit)).fill().map((_, i) => i + 1);
+        const pages = Array.from({ length: Math.ceil(this.model.meta.count / this.limit) }, (_, i) => i + 1);
 
-        return array;
+        return pages;
     }
 
     @tracked filterField;
@@ -63,7 +63,7 @@ export default class IndexController extends Controller {
     }
 
     @action
-    choseFilterField(selectedObject) {
+    chooseFilterField(selectedObject) {
         this.filterFieldContent = selectedObject.value;
     }
 
