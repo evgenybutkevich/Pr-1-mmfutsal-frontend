@@ -14,12 +14,12 @@
             font-weight: bold;
             padding: 12px;
 
-            &.sorted > .asc:after {
+            &.sorted.asc > .table-group-paragraph:after {
                 position: absolute;
                 content: '\2193';
             }
 
-            &.sorted > .desc:after {
+            &.sorted.desc > .table-group-paragraph:after {
                 position: absolute;
                 content: "\2191";
             }
