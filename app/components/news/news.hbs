@@ -1,0 +1,15 @@
+<h1 class="sidebar__title">
+    News
+</h1>
+
+<section class="news">
+    <News::TagSwitcher @model={{@model}} @onItemClick={{@onItemClick}} @onResetClick={{@onResetClick}} />
+
+    {{#each @model.news as |model|}}
+        <News::NewsSingle @model={{model}} @onItemClick={{@onItemClick}} />
+    {{/each}}
+</section>
+
+<PaginationGroup @page={{@page}} @pageValues={{@pageValues}} @pageValuesLength={{@pageValuesLength}}
+    @onPageClick={{@onPageClick}} @onPageArrowClick={{@onPageArrowClick}} @limit={{@limit}}
+    @limitValues={{@limitValues}} @onLimitClick={{@onLimitClick}} />
