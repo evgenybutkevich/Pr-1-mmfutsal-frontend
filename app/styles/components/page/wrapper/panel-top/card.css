@@ -1,0 +1,23 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    padding: var(--elements-padding);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+.card:hover {
+    cursor: pointer;
+    transform: translate(0, 0) scale(1.1);
+}
+.card .card__foto {
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    padding: 10px;
+}
+.card .card__team::before {
+    content: "(";
+}
+.card .card__team::after {
+    content: ")";
+}

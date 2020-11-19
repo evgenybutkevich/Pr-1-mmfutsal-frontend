@@ -1,0 +1,44 @@
+.table-group {
+    border-bottom: 2px solid;
+    border-collapse: collapse;
+    margin-top: var(--elements-distance);
+    text-align: center;
+    width: 100%;
+}
+.table-group .table-group-header-row {
+    border-bottom: 2px solid;
+}
+.table-group .table-group-header-row .table-group-header {
+    font-weight: bold;
+    padding: 12px;
+}
+.table-group .table-group-header-row .table-group-header.sorted.asc > .table-group-paragraph:after {
+    position: absolute;
+    content: "↓";
+    transform: translate(5px, 0);
+}
+.table-group .table-group-header-row .table-group-header.sorted.desc > .table-group-paragraph:after {
+    position: absolute;
+    content: "↑";
+    transform: translate(5px, 0);
+}
+.table-group .table-group-header-row .table-group-header:hover:not(.inactive) {
+    background-color: var(--background-color-table-hover);
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+.table-group .table-group-row {
+    border-bottom: 1px solid;
+    font-size: 15px;
+}
+.table-group .table-group-row:hover {
+    background-color: var(--background-color-table-hover);
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+.table-group .table-group-row .table-group-data {
+    padding: 10px;
+}
+.table-group .table-group-row .table-group-data .table-group-button {
+    margin-right: var(--elements-distance);
+}
