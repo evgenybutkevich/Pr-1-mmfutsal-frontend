@@ -1,0 +1,13 @@
+<section class="theme-switcher">
+    <section class="theme-switcher__item theme-switcher__1">
+        <p class="theme-switcher__text">Theme:</p>
+    </section>
+
+    <section class="theme-switcher__item theme-switcher__2">
+        <p class="theme-switcher__text" {{on "click" (fn @onThemeSwitcherClick 'light')}}>Light</p>
+    </section>
+
+    <section class="theme-switcher__item theme-switcher__3">
+        <p class="theme-switcher__text" {{on "click" (fn @onThemeSwitcherClick 'dark')}}>Dark</p>
+    </section>
+</section>

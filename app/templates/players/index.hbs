@@ -1,38 +1,15 @@
-<h1>Players list</h1>
+<h1 class="sidebar__title">Players list</h1>
 
-<section class="filter-create-group">
-    <FilterGroup
-        @selectOptions={{this.selectOptions}}
-        @filterFieldContent={{this.filterFieldContent}}
-        @chooseFilterField={{this.chooseFilterField}}
+<Filter::Filter @selectOptions={{this.selectOptions}} @filterFieldContent={{this.filterFieldContent}}
+    @chooseFilterField={{this.chooseFilterField}} @filterValueContent={{this.filterValueContent}}
+    @onFilterClick={{this.onFilterClick}} @onFilterResetClick={{this.onFilterResetClick}} />
 
-        @filterValueContent={{this.filterValueContent}}
-        @onFilterClick={{this.onFilterClick}}
-        @onFilterResetClick={{this.onFilterResetClick}}
-    />
+{{!-- <button {{on "click" (fn this.onCreateButtonClick)}}>Create</button> --}}
 
-    <button {{on "click" (fn this.onCreateButtonClick)}}>Create</button>
-</section>
-
-<TableGroup
-    @tableOptions={{this.tableOptions}}
-    @models={{model}}
-
-    @onHeaderClick={{this.onHeaderClick}}
-    @onRowClick={{this.onRowClick}}
-    @onViewButtonClick={{this.onViewButtonClick}}
-    @onEditButtonClick={{this.onEditButtonClick}}
-    @sortField={{this.sortField}}
-    @sortDirection={{this.sortDirection}}
-    @sortDirectionArrow={{this.sortDirectionArrow}}
-
-    @page={{this.page}}
-    @pageValues={{this.pageValues}}
-    @pageValuesLength={{this.pageValues.length}}
-    @onPageClick={{this.onPageClick}}
-    @onPageArrowClick={{this.onPageArrowClick}}
-
-    @limit={{this.limit}}
-    @limitValues={{this.limitValues}}
-    @onLimitClick={{this.onLimitClick}}
-/>
+<TableGroup @tableOptions={{this.tableOptions}} @models={{model}} @onHeaderClick={{this.onHeaderClick}}
+    @onRowClick={{this.onRowClick}} @onViewButtonClick={{this.onViewButtonClick}}
+    @onEditButtonClick={{this.onEditButtonClick}} @sortField={{this.sortField}} @sortDirection={{this.sortDirection}}
+    @sortDirectionArrow={{this.sortDirectionArrow}} @page={{this.page}} @pageValues={{this.pageValues}}
+    @pageValuesLength={{this.pageValues.length}} @onPageClick={{this.onPageClick}}
+    @onPageArrowClick={{this.onPageArrowClick}} @limit={{this.limit}} @limitValues={{this.limitValues}}
+    @onLimitClick={{this.onLimitClick}} />
