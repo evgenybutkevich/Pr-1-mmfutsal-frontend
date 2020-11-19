@@ -1,0 +1,50 @@
+.input-section {
+    display: inline-flex;
+    margin: 0.7em 0.2em 0.2em;
+    font-size: var(--font-size-input);
+}
+.input-section .input {
+    padding: 0.3em 0.5em;
+    font-size: var(--font-size-input);
+    color: black;
+}
+.input-section .input:focus {
+    outline: 1px solid;
+    transition: outline-color 0.3s ease;
+}
+.input-section .input:focus + .label, .input-section .input:valid + .label {
+    padding: 0 0.5em;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 0.2em 0.2em 0.2em 0 var(--box-shadow-label);
+    color: black;
+    cursor: default;
+    transform: translate(0.5em, -0.6em) scale(0.6);
+    transition: all 0.3s ease;
+}
+.input-section .input-border {
+    border: none;
+    outline: 1px solid;
+    transition: outline-color 0.3s ease;
+}
+.input-section .label {
+    padding: 0.3em 0.5em;
+    transform: translate(0, 0) scale(1);
+    transform-origin: top left;
+    transition: all 0.3s ease;
+    color: black;
+    font-size: var(--font-size-input);
+}
+.input-section .label:hover {
+    cursor: text;
+}
+.input-section .label-absolute {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.input-section-relative {
+    position: relative;
+}

@@ -1,0 +1,9 @@
+.page {
+    z-index: 1;
+    min-height: 100vh;
+    background-color: var(--background-color-page);
+}
+.page .page__inner {
+    min-height: inherit;
+    padding: 0 var(--elements-distance);
+}
