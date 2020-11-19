@@ -1,0 +1,47 @@
+.light {
+    --background-color-page: var(--color-light-white);
+    --background-color-header: var(--color-light-8);
+    --background-color-menu-hover: var(--color-light-white);
+    --background-color-menu-dropdown: var(--color-light-8);
+    --background-color-menu-dropdown-hover: var(--color-light-white);
+    --background-color-wrapper-elements: var(--color-light-8);
+    --background-color-tag-switcher-hover: var(--color-light-white);
+    --background-color-pagination-active: var(--color-light-white);
+    --background-color-pagination-hover: var(--color-light-white);
+    --background-color-button: var(--color-light-10);
+    --background-color-button-hover: var(--color-light-white);
+    --background-color-table-hover: var(--color-light-white);
+
+    --border-menu-dropdown: var(--color-light-white);
+    --border-tag-switcher: var(--color-light-white);
+
+    --box-shadow-button: var(--color-light-6);
+    --box-shadow-label: var(--color-light-6);
+
+    --color-general: var(--color-text-light);
+    --color-inactive: var(--color-light-2);
+}
+
+.dark {
+    --background-color-page: var(--color-dark-1);
+    --background-color-header: var(--color-dark-4);
+    --background-color-menu-hover: var(--color-dark-6);
+    --background-color-menu-dropdown: var(--color-dark-4);
+    --background-color-menu-dropdown-hover: var(--color-dark-6);
+    --background-color-wrapper-elements: var(--color-dark-4);
+    --background-color-tag-switcher-hover: var(--color-dark-6);
+    --background-color-pagination-active: var(--color-dark-6);
+    --background-color-pagination-hover: var(--color-dark-6);
+    --background-color-button: var(--color-dark-6);
+    --background-color-button-hover: var(--color-dark-9);
+    --background-color-table-hover: var(--color-dark-8);
+
+    --border-menu-dropdown: var(--color-dark-1);
+    --border-tag-switcher: var(--color-dark-6);
+
+    --box-shadow-button: var(--color-dark-1);
+    --box-shadow-label: var(--color-dark-1);
+
+    --color-general: var(--color-text-dark);
+    --color-inactive: var(--color-dark-8);
+}

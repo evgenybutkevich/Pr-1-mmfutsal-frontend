@@ -1,0 +1,12 @@
+.sidebar__center {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 3;
+    max-width: 55%;
+}
+.sidebar__center .sidebar__title {
+    padding: var(--elements-padding);
+    font-size: var(--font-size-title);
+    font-weight: var(--font-weight-title);
+    text-transform: uppercase;
+}

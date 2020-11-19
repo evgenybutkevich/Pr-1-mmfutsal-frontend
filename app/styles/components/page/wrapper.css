@@ -1,0 +1,13 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: inherit;
+    margin-top: var(--height-header);
+    padding: var(--elements-distance) 0;
+}
+.wrapper .wrapper__item.wrapper__1 {
+    margin-bottom: var(--elements-distance);
+}
+.wrapper .wrapper__item.wrapper__3 {
+    margin-top: var(--elements-distance) 0;
+}

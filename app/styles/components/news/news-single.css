@@ -1,0 +1,26 @@
+.news-single {
+    border: none;
+    border-bottom: solid;
+    border-width: 2px;
+    padding: 20px;
+}
+.news-single .news__heading {
+    padding: var(--elements-padding);
+    font-weight: var(--font-weight-title);
+}
+.news-single .news__content {
+    padding: var(--elements-padding);
+    font-style: italic;
+}
+.news-single .news__footer {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--elements-padding);
+}
+.news-single .news__footer .news__section {
+    text-decoration: underline;
+}
+.news-single .news__footer .news__section:hover {
+    color: darkorange;
+    cursor: pointer;
+}
