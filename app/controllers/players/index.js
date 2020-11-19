@@ -70,7 +70,7 @@ export default class IndexController extends Controller {
     @action
     onFilterClick() {
         if (this.filterValueContent === '') {
-            this.filterValue = undefined;
+            this.filterValue = null;
             return;
         }
 
@@ -81,10 +81,10 @@ export default class IndexController extends Controller {
 
     @action
     onFilterResetClick() {
-        this.filterField = undefined;
-        this.filterFieldContent = undefined;
-        this.filterValue = undefined;
-        this.filterValueContent = undefined;
+        this.filterField = null;
+        this.filterFieldContent = null;
+        this.filterValue = null;
+        this.filterValueContent = null;
     }
 
     @action
