@@ -1,12 +1,37 @@
-<div>
-    <label for="firstName">First name:</label>
-    <span>{{@player.firstName}}</span>
-</div>
+<section class="player-info">
+    <section class="player-info__top">
+        <section class="player__firstname">
+            <label for="firstName">First name:</label>
+            <p id="firstName">{{@player.firstName}}</p>
+        </section>
 
-<div>
-    <label for="lastName">Last name:</label>
-    <span>{{@player.lastName}}</span>
-</div>
+        <section class="player__lastname">
+            <label for="lastname">Last name:</label>
+            <p id="lastname">{{@player.lastName}}</p>
+        </section>
+    </section>
+
+    <section class="player-info__bottom">
+        {{#each @player.seasons as |season|}}
+            <section class="season-section">
+                <p class="season__name">{{season.seasonName}}:</p>
+
+                {{#each season.teams as |team|}}
+                    <section class="team-section">
+                        <p class="team-tag">Team: {{team.teamName}}</p>
+                        <section class="result-section">
+                            <p>Games played: {{team.result.gamesPlayed}}</p>
+                            <p>Goals: {{team.result.goals}}</p>
+                            <p>Yellow cards: {{team.result.yellowCards}}</p>
+                            <p>Red cards: {{team.result.redCards}}</p>
+                        </section>
+                    </section>
+                {{/each}}
+            </section>
+        {{/each}}
+    </section>
+</section>
+
 
 <button>
     <LinkTo @route="players.update" @model={{@player.id}}>Update</LinkTo>

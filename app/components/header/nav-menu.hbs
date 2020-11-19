@@ -1,0 +1,29 @@
+<nav class="nav-menu">
+    <section class={{this.dropdownClass}}>
+        <p class="nav-menu__text" {{on "click" this.onDropdownClick}}>Dropdown</p>
+
+        <section class="dropdown-section">
+            <p class="dropdown__text" {{on "click" (fn this.onItemClick "players.index")}}>
+                Players
+            </p>
+            <p class="dropdown__text" {{on "click" (fn this.onItemClick 'seasons.index')}}>
+                Seasons
+            </p>
+            <p class="dropdown__text" {{on "click" (fn this.onItemClick 'teams.index')}}>
+                Teams
+            </p>
+        </section>
+    </section>
+
+    <section class="nav-menu__item nav-menu__2">
+        <p class="nav-menu__text">Forum</p>
+    </section>
+
+    <section class="nav-menu__item nav-menu__3" {{on "click" (fn this.onItemClick "contacts")}}>
+        <p class="nav-menu__text">Contacts</p>
+    </section>
+
+    <section class="nav-menu__item nav-menu__4" {{on "click" (fn this.onItemClick "about")}}>
+        <p class="nav-menu__text">About</p>
+    </section>
+</nav>
