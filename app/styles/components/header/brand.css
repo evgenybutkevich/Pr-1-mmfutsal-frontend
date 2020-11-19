@@ -1,0 +1,12 @@
+.brand {
+    height: inherit;
+    width: 100%;
+    line-height: var(--height-header);
+    font-size: var(--font-size-brand);
+    font-style: italic;
+    font-weight: var(--font-weight-brand);
+    text-transform: uppercase;
+}
+.brand:hover {
+    cursor: pointer;
+}

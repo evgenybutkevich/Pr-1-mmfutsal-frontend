@@ -1,0 +1,28 @@
+@import './variables.css';
+@import './colors.css';
+@import './themes.css';
+
+@import '../components/header/index.css';
+@import '../components/page/index.css';
+@import '../components/news/index.css';
+
+@import '../components/pagination-group.css';
+@import '../components/button.css';
+@import '../components/table-group.css';
+
+@import '../components/players/view.css';
+
+@import '../components/filter/filter.css';
+@import '../components/input-section-sec.css';
+@import '../components/input-section.css';
+@import '../components/validated-data-group.css';
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: var(--color-general);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: var(--font-size-general);
+    font-weight: var(--font-weight-general);
+}
