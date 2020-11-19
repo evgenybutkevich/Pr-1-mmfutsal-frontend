@@ -1,4 +1,5 @@
 import Route from '@ember/routing/route';
+import queryValidation from 'pr-1-mmfutsal-frontend/utils/query-validation';
 
 export default class IndexRoute extends Route {
     queryParams = {
@@ -23,6 +24,8 @@ export default class IndexRoute extends Route {
     };
 
     model(params) {
+        queryValidation(params);
+
         return this.store.query('player', params);
     }
 }
