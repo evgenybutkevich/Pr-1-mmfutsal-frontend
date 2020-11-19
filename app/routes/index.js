@@ -10,12 +10,12 @@ export default class IndexRoute extends Route {
         filterValue: {
             refreshModel: true
         },
-        // sortField: {
-        //     refreshModel: true
-        // },
-        // sortDirection: {
-        //     refreshModel: true
-        // },
+        sortField: {
+            refreshModel: true
+        },
+        sortDirection: {
+            refreshModel: true
+        },
         page: {
             refreshModel: true
         },
