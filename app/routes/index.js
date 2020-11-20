@@ -1,5 +1,5 @@
 import Route from '@ember/routing/route';
-import qureyValidation from 'pr-1-mmfutsal-frontend/utils/query-validation';
+import queryValidation from 'pr-1-mmfutsal-frontend/utils/query-validation';
 import RSVP from 'rsvp';
 
 export default class IndexRoute extends Route {
@@ -25,7 +25,7 @@ export default class IndexRoute extends Route {
     };
 
     model(params) {
-        qureyValidation(params);
+        queryValidation(params);
 
         return RSVP.hash({
             sections: this.store.findAll('section'),
