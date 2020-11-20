@@ -12,9 +12,6 @@ export default class IndexController extends Controller {
     @tracked filterField;
     @tracked filterValue;
 
-    @tracked sortField = 'id';
-    @tracked sortDirection = ASCENDING_DIRECTION;
-
     @tracked page = 1;
     @tracked limit = 5;
 
