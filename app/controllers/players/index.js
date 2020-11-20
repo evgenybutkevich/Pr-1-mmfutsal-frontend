@@ -26,10 +26,6 @@ export default class IndexController extends Controller {
     @tracked page = 1;
     @tracked limit = 5;
 
-    resetPage() {
-        this.page = 1;
-    }
-
     selectOptions = [
         {
             text: 'First name',
