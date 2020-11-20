@@ -3,9 +3,9 @@
         all
     </p>
 
-    {{#each @model.sections as |section|}}
-        <p class="tag-switcher__item" {{on "click" (fn @onItemClick section.name)}}>
-            {{section.name}}
+    {{#each @model.sections as |tag|}}
+        <p class="tag-switcher__item" {{on "click" (fn @onItemClick tag.name)}}>
+            {{tag.name}}
         </p>
     {{/each}}
 </section>

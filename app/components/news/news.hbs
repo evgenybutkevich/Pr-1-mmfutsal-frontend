@@ -2,8 +2,8 @@
 <section class="news">
     <News::TagSwitcher @model={{@model}} @onItemClick={{@onItemClick}} @onResetClick={{@onResetClick}} />
 
-    {{#each @model.news as |model|}}
-        <News::NewsSingle @model={{model}} @onItemClick={{@onItemClick}} />
+    {{#each @model.news as |article|}}
+        <News::NewsSingle @article={{article}} @onItemClick={{@onItemClick}} />
     {{/each}}
 </section>
 
