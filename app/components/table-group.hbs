@@ -1,12 +1,16 @@
-{{#if @models.length}}
+{{#if @model.length}}
     <table class="table-group">
         <tr class="table-group-header-row">
             {{#each @tableOptions as |object|}}
-                <TableHeaderElement @value={{object.value}} @sortField={{@sortField}} @sortDirection={{@sortDirection}}
-                    @onHeaderClick={{@onHeaderClick}}>
-                        <p class="table-group-paragraph">
-                            {{object.text}}
-                        </p>
+                <TableHeaderElement
+                    @value={{object.value}}
+                    @sortField={{@sortField}}
+                    @sortDirection={{@sortDirection}}
+                    @onHeaderClick={{@onHeaderClick}}
+                >
+                    <p class="table-group-paragraph">
+                        {{object.text}}
+                    </p>
                 </TableHeaderElement>
             {{/each}}
 
@@ -15,7 +19,7 @@
             </th>
         </tr>
 
-        {{#each @models as |model|}}
+        {{#each @model as |model|}}
             {{#if model.id}}
                 <tr class="table-group-row" {{on "click" (fn @onRowClick model.id)}}>
                     {{#each @tableOptions as |object|}}
@@ -35,9 +39,12 @@
         {{/each}}
     </table>
 
-    <PaginationGroup @page={{@page}} @pageValues={{@pageValues}} @pageValuesLength={{@pageValuesLength}}
-        @onPageClick={{@onPageClick}} @onPageArrowClick={{@onPageArrowClick}} @limit={{@limit}}
-        @limitValues={{@limitValues}} @onLimitClick={{@onLimitClick}} />
+    <PaginationGroup
+        @model={{@model}}
+        @page={{@page}}
+        @limit={{@limit}}
+        @updatePaginationGroup={{@updatePaginationGroup}}
+    />
 {{else}}
     <p class="empty-model">No records found</p>
 {{/if}}

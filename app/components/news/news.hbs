@@ -7,6 +7,9 @@
     {{/each}}
 </section>
 
-<PaginationGroup @page={{@page}} @pageValues={{@pageValues}} @pageValuesLength={{@pageValuesLength}}
-    @onPageClick={{@onPageClick}} @onPageArrowClick={{@onPageArrowClick}} @limit={{@limit}}
-    @limitValues={{@limitValues}} @onLimitClick={{@onLimitClick}} />
+<PaginationGroup
+    @model={{@model.news}}
+    @page={{@page}}
+    @limit={{@limit}}
+    @updatePaginationGroup={{@updatePaginationGroup}}
+/>
