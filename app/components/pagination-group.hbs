@@ -1,31 +1,31 @@
 <section class="pagination-group">
     <section class="page-group">
         <ul class="page-group-list">
-            <li class={{if (or (eq @page 1) (eq @pageValuesLength 0)) "page-group-item inactive" "page-group-item"}}
-                {{on "click" (fn @onPageArrowClick -1)}}>
-                &laquo;
+            <li class={{if (or (eq @page 1) (eq this.pageValues.length 0)) "page-group-item inactive" "page-group-item"}}
+                {{on "click" (fn this.onPageArrowClick -1)}}>
+                    &laquo;
             </li>
 
-            {{#each @pageValues as |pageValue|}}
+            {{#each this.pageValues as |pageValue|}}
                 <li class={{if (eq @page pageValue) "page-group-item active" "page-group-item"}}
-                    {{on "click" (fn @onPageClick pageValue)}}>
-                    {{pageValue}}
+                    {{on "click" (fn this.onPageClick pageValue)}}>
+                        {{pageValue}}
                 </li>
             {{/each}}
 
-            <li class={{if (or (eq @page @pageValuesLength) (eq @pageValuesLength 0))
-                "page-group-item inactive" "page-group-item"}} {{on "click" (fn @onPageArrowClick 1)}}>
-                &raquo;
+            <li class={{if (or (eq @page this.pageValues.length) (eq this.pageValues.length 0))
+                "page-group-item inactive" "page-group-item"}} {{on "click" (fn this.onPageArrowClick 1)}}>
+                    &raquo;
             </li>
         </ul>
     </section>
 
     <section class="limit-group">
         <ul class="limit-group-list">
-            {{#each @limitValues as |limitValue|}}
+            {{#each this.limitValues as |limitValue|}}
                 <li class={{if (eq @limit limitValue) "limit-group-item active" "limit-group-item"}}
-                    {{on "click" (fn @onLimitClick limitValue)}}>
-                    {{limitValue}}
+                    {{on "click" (fn this.onLimitClick limitValue)}}>
+                        {{limitValue}}
                 </li>
             {{/each}}
         </ul>
