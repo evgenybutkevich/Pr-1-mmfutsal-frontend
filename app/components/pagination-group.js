@@ -8,26 +8,31 @@ export default class PaginationGroupComponent extends Component {
         return pages;
     }
 
+    newPage = this.args.page;
+    newLimit = this.args.limit;
     limitValues = [5, 10, 20, 50];
 
-    resetPage(newLimit) {
-        newPage = 1;
+    updatePaginationValues() {
+        this.args.updatePaginationGroup(this.newPage, this.newLimit);
+    }
 
-        this.args.updatePaginationGroup(newPage, newLimit);
+    resetPage() {
+        this.newPage = 1;
+
+        this.updatePaginationValues();
     }
 
     movePage(amount) {
-        newPage = this.args.page + amount;
-        newLimit = this.args.limit;
+        this.newPage += amount;
 
-        this.args.updatePaginationGroup(newPage, newLimit);
+        this.updatePaginationValues();
     }
 
     @action
     onPageClick(newPage) {
-        newLimit = this.args.limit;
+        this.newPage = newPage;
 
-        this.args.updatePaginationGroup(newPage, newLimit);
+        this.updatePaginationValues();
     }
 
     @action
@@ -36,11 +41,11 @@ export default class PaginationGroupComponent extends Component {
             return;
         }
 
-        if (this.args.page === 1 && amount === -1) {
+        if (this.newPage === 1 && amount === -1) {
             return;
         }
 
-        if (this.args.page === this.pageValues.length && amount === 1) {
+        if (this.newPage === this.pageValues.length && amount === 1) {
             return;
         }
 
@@ -49,6 +54,8 @@ export default class PaginationGroupComponent extends Component {
 
     @action
     onLimitClick(newLimit) {
-        this.resetPage(newLimit);
+        this.newLimit = newLimit;
+
+        this.resetPage();
     }
 }
