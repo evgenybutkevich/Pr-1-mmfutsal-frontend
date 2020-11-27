@@ -3,10 +3,15 @@ import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 
 export default class ApplicationController extends Controller {
-    @tracked themeClass = "light";
+    @tracked themeClass = 'light';
 
     @action
     onThemeSwitcherClick(theme) {
         this.themeClass = theme;
+    }
+
+    @action
+    onBestPlayerClick(id) {
+        this.transitionToRoute('players.view', id);
     }
 }

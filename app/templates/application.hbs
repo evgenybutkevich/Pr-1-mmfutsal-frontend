@@ -1,7 +1,7 @@
 <section class={{this.themeClass}}>
     <Header::Header @onThemeSwitcherClick={{this.onThemeSwitcherClick}} />
 
-    <Page::Page @bestPlayers={{model.bestPlayers}}>
+    <Page::Page @bestPlayers={{model.bestPlayers}} @onBestPlayerClick={{this.onBestPlayerClick}}>
         {{outlet}}
     </Page::Page>
 </section>
