@@ -1,4 +1,4 @@
-<section class="card">
+<section class="card" {{on "click" (fn this.onCardClick @player.id)}}>
     <img class="card__foto" src={{@player.avatar}}>
     <p class="card__player">{{@player.firstName}} {{@player.lastName}}</p>
     <p class="card__team">{{@player.teamName}}</p>
