@@ -1,6 +1,6 @@
 <nav class="nav-menu">
-    <section class={{this.dropdownClass}}>
-        <p class="nav-menu__text" {{on "click" this.onDropdownClick}}>Dropdown</p>
+    <section class="nav-menu__item nav-menu__1 dropdown">
+        <p class="nav-menu__text">Dropdown</p>
 
         <section class="dropdown-section">
             <p class="dropdown__text" {{on "click" (fn this.onItemClick "players.index")}}>
