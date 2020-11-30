@@ -10,6 +10,7 @@
 @import '../components/button.css';
 @import '../components/table-group.css';
 
+@import '../components/players/index.css';
 @import '../components/players/view.css';
 
 @import '../components/filter/filter.css';
