@@ -18,5 +18,7 @@
     @validationError={{model.validations.attrs.lastName.message}}
 />
 
-<button class="create-model" {{on "click" this.create}}>Create</button>
-<button class="create-model" {{on "click" (fn this.onCancelButtonClick)}}>Cancel</button>
+<section class="button-group">
+    <button {{on "click" this.create}}>Create</button>
+    <button {{on "click" (fn this.onCancelButtonClick)}}>Cancel</button>
+</section>

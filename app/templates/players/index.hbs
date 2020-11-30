@@ -1,5 +1,9 @@
 <h1 class="sidebar__title">Players list</h1>
 
+<section class="button-group">
+    <button {{on "click" this.onCreateButtonClick}}>Create</button>
+</section>
+
 <Filter::Filter
     @selectOptions={{this.selectOptions}}
     @filterFieldContent={{this.filterFieldContent}}
