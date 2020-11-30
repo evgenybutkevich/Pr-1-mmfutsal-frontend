@@ -1,11 +1,13 @@
-<div class="nav-background">
-    <div class="nav-div">
-        <NavBar />
-    </div>
-</div>
+<MenuSection />
 
-<div class="content-background">
-    <div class="content-div">
-        {{outlet}}
-    </div>
-</div>
+<section class="grid-column grid-column-fixed grid-column-left">
+    <p>left</p>
+</section>
+
+<section class="wrapper wrapper-border wrapper-shadow">
+    {{outlet}}
+</section>
+
+<section class="grid-column grid-column-fixed grid-column-right">
+    <p>right</p>
+</section>

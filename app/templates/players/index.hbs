@@ -1,50 +1,15 @@
-<div>
-    <h3 style="float: left;">PLAYERS LIST, <LinkTo @route="players.create">Create new player</LinkTo>
-    </h3>
-</div>
+<h1 class="sidebar__title">Players list</h1>
 
-<label>
-    <span>
-        Filter field
-    </span>
+<Filter::Filter @selectOptions={{this.selectOptions}} @filterFieldContent={{this.filterFieldContent}}
+    @chooseFilterField={{this.chooseFilterField}} @filterValueContent={{this.filterValueContent}}
+    @onFilterClick={{this.onFilterClick}} @onFilterResetClick={{this.onFilterResetClick}} />
 
-    <PowerSelect
-        @options={{this.filterFieldValues}}
-        @selected={{this.filterField}}
-        @onChange={{this.selectFilterField}} as |field|
-    >
-        {{field}}
-    </PowerSelect>
-</label>
+{{!-- <button {{on "click" (fn this.onCreateButtonClick)}}>Create</button> --}}
 
-<label>
-    <span>
-        Filter value
-    </span>
-
-    <Input id="filterValue" @value={{value}} />
-    <button {{on "click" (fn this.onFilterClick)}}>Filter</button>
-</label>
-
-<Players::List
-    @players={{model}}
-
-    @onHeaderClick={{this.onHeaderClick}}
-    @sortDirection={{this.sortDirection}}
-
-    @limitValues={{this.limitValues}}
-    @limit={{this.limit}}
-    @selectLimit={{this.selectLimit}}
-/>
-
-<div class="pages">
-    <p>Pages</p>
-
-    {{#each this.pageArray as |index|}}
-        <button class={{if (eq index this.page) "disabled"}}
-            {{on "click" (fn this.onPageClick index)}}
-        >
-            {{index}}
-        </button>
-    {{/each}}
-</div>
+<TableGroup @tableOptions={{this.tableOptions}} @models={{model}} @onHeaderClick={{this.onHeaderClick}}
+    @onRowClick={{this.onRowClick}} @onViewButtonClick={{this.onViewButtonClick}}
+    @onEditButtonClick={{this.onEditButtonClick}} @sortField={{this.sortField}} @sortDirection={{this.sortDirection}}
+    @sortDirectionArrow={{this.sortDirectionArrow}} @page={{this.page}} @pageValues={{this.pageValues}}
+    @pageValuesLength={{this.pageValues.length}} @onPageClick={{this.onPageClick}}
+    @onPageArrowClick={{this.onPageArrowClick}} @limit={{this.limit}} @limitValues={{this.limitValues}}
+    @onLimitClick={{this.onLimitClick}} />

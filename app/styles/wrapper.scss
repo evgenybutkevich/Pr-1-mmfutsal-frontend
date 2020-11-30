@@ -1,0 +1,22 @@
+.wrapper {
+    background-color: white;
+    border: 1px solid $gray-5;
+    border-radius: 10px;
+    font-size: 20px;
+    height: 200vh;
+    margin: auto;
+    margin-top: 20vh;
+    margin-bottom: 10vh;
+    padding: 20px;
+
+    width: 50%;
+    z-index: 1;
+}
+
+.wrapper-border {
+    border-radius: 10px;
+}
+
+.wrapper-shadow {
+    box-shadow: 10px 10px 2px 0px black;
+}

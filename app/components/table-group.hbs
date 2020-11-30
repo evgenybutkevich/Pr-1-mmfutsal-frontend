@@ -1,0 +1,43 @@
+{{#if @models.length}}
+    <table class="table-group">
+        <tr class="table-group-header-row">
+            {{#each @tableOptions as |object|}}
+                <TableHeaderElement @value={{object.value}} @sortField={{@sortField}} @sortDirection={{@sortDirection}}
+                    @onHeaderClick={{@onHeaderClick}}>
+                        <p class="table-group-paragraph">
+                            {{object.text}}
+                        </p>
+                </TableHeaderElement>
+            {{/each}}
+
+            <th class="table-group-header inactive">
+                {{!-- column for buttons --}}
+            </th>
+        </tr>
+
+        {{#each @models as |model|}}
+            {{#if model.id}}
+                <tr class="table-group-row" {{on "click" (fn @onRowClick model.id)}}>
+                    {{#each @tableOptions as |object|}}
+                        <td class="table-group-data">{{get model object.value}}</td>
+                    {{/each}}
+
+                    <td class="table-group-data">
+                        <button class="table-group-button" {{on "click" (fn @onViewButtonClick model.id)}}>
+                            View
+                        </button>
+                        <button class="table-group-button" {{on "click" (fn @onEditButtonClick model.id)}}>
+                            Edit
+                        </button>
+                    </td>
+                </tr>
+            {{/if}}
+        {{/each}}
+    </table>
+
+    <PaginationGroup @page={{@page}} @pageValues={{@pageValues}} @pageValuesLength={{@pageValuesLength}}
+        @onPageClick={{@onPageClick}} @onPageArrowClick={{@onPageArrowClick}} @limit={{@limit}}
+        @limitValues={{@limitValues}} @onLimitClick={{@onLimitClick}} />
+{{else}}
+    <p class="empty-model">No records found</p>
+{{/if}}

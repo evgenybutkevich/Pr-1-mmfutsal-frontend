@@ -1,0 +1,33 @@
+@import './button.scss';
+@import './color.scss';
+@import './grid-column.scss';
+
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 30px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+body {
+    background-attachment: fixed;
+    background-color: gray;
+    // background-image: url('/assets/images/body-background.png');
+    // background-repeat: no-repeat;
+    // background-size: cover;
+}
+
+.empty-model {
+    border: 1px solid black;
+    color: black;
+    margin-top: 20px;
+    padding: 10px;
+    text-align: center;
+    text-transform: uppercase;
+}

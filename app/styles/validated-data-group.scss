@@ -1,0 +1,11 @@
+.validated-data-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .error {
+        display: inline-flex;
+        color: red;
+        font-size: 15px;
+    }
+}

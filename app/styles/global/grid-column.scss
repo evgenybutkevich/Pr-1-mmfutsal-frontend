@@ -1,0 +1,22 @@
+.grid-column {
+    background-color: white;
+    height: 100%;
+    width: 20%;
+    z-index: 1;
+}
+
+.grid-column-fixed {
+    position: fixed;
+}
+
+.grid-column-left {
+    left: 1vw;
+    top: 0;
+    padding-top: 4em;
+}
+
+.grid-column-right {
+    right: 1vw;
+    top: 0;
+    padding-top: 4em;
+}

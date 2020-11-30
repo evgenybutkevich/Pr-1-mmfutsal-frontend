@@ -1,0 +1,19 @@
+<section class="filter">
+    <section class="filter__item filter-field">
+        <label>Filter field:</label>
+        <PowerSelect @options={{@selectOptions}} @selected={{this.selectedObject}} @onChange={{@chooseFilterField}} as
+            |object|>
+                {{object.text}}
+        </PowerSelect>
+    </section>
+
+    <section class="filter__item filter-value">
+        <label>Filter value:</label>
+        <Input type="text" @value={{@filterValueContent}} required />
+    </section>
+
+    <section class="filter__item filter-buttons">
+        <button class="filter-group-button" {{on "click" (fn @onFilterClick)}}>Filter</button>
+        <button class="filter-group-button" {{on "click" (fn @onFilterResetClick)}}>Reset</button>
+    </section>
+</section>
