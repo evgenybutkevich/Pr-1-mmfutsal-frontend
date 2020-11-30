@@ -31,6 +31,7 @@ export default Model.extend(Validations, {
 
     firstName: attr('string'),
     lastName: attr('string'),
+    avatar: attr('string'),
     createdAt: attr('date'),
     updatedAt: attr('date')
 });

@@ -10,6 +10,13 @@
   padding-bottom: 5px;
   border-bottom: 1px solid white;
 }
+.player-info .player-info__top .player__avatar img {
+  height: 150px;
+  width: 150px;
+}
+
+
+
 .player-info .player-info__top .player__firstname,
 .player-info .player-info__top .player__lastname {
   display: flex;
