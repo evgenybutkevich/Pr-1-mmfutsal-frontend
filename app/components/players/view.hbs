@@ -1,5 +1,9 @@
 <section class="player-info">
     <section class="player-info__top">
+        <section class="player__avatar">
+            <img src={{@player.avatar}}>
+        </section>
+
         <section class="player__firstname">
             <label for="firstName">First name:</label>
             <p id="firstName">{{@player.firstName}}</p>
@@ -31,8 +35,3 @@
         {{/each}}
     </section>
 </section>
-
-
-<button>
-    <LinkTo @route="players.update" @model={{@player.id}}>Update</LinkTo>
-</button>
