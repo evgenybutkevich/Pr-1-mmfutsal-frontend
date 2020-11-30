@@ -1,0 +1,17 @@
+.panel__top {
+    display: flex;
+    flex-direction: column;
+    padding: var(--elements-padding);
+    background-color: var(--background-color-wrapper-elements);
+    border-radius: var(--elements-border-radius);
+}
+.panel__top .panel__title {
+    padding: var(--elements-padding);
+    font-size: var(--font-size-title);
+    font-weight: var(--font-weight-title);
+}
+.panel__top .panel__list {
+    display: flex;
+    justify-content: space-around;
+    padding: var(--elements-padding);
+}

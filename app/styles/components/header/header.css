@@ -1,0 +1,27 @@
+.header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 9;
+    height: var(--height-header);
+    background-color: var(--background-color-header);
+    outline: 20px solid var(--background-color-page);
+}
+.header .header__inner {
+    display: flex;
+    justify-content: space-between;
+    height: inherit;
+    padding: 0 var(--elements-distance);
+}
+.header .header__inner .header__item {
+    display: flex;
+    align-items: center;
+    height: inherit;
+}
+.header .header__inner .header__item.header__1 {
+    min-width: 200px;
+}
+.header .header__inner .header__item.header__2 {
+    min-width: 400px;
+}

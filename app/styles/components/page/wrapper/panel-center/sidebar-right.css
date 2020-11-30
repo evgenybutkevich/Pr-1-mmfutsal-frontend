@@ -1,0 +1,4 @@
+.sidebar__right {
+    flex-grow: 1;
+    margin-left: var(--elements-distance);
+}

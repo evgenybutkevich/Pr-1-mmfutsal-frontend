@@ -1,0 +1,9 @@
+.panel__center {
+    display: flex;
+    justify-content: space-between;
+}
+.panel__center .panel__item {
+    padding: var(--elements-padding);
+    background-color: var(--background-color-wrapper-elements);
+    border-radius: var(--elements-border-radius);
+}
