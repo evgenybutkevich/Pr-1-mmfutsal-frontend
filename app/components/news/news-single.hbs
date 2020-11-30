@@ -1,0 +1,13 @@
+<section class="news-single">
+    <h2 class="news__heading">{{@article.heading}}</h2>
+    <p class="news__content">{{@article.content}}</p>
+    <section class="news__footer">
+        <p class="news__section" {{on "click" (fn @onItemClick @article.section.name)}}>
+            {{@article.section.name}}
+        </p>
+        <p class="news__date">
+            Author: {{@article.user.userName}},
+            Created: {{moment-format @article.createdAt 'DD-MM-YYYY'}}
+        </p>
+    </section>
+</section>

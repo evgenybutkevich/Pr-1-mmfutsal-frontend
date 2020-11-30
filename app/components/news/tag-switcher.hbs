@@ -1,0 +1,11 @@
+<section class="tag-switcher">
+    <p class="tag-switcher__item" {{on "click" @onResetClick}}>
+        all
+    </p>
+
+    {{#each @model.sections as |tag|}}
+        <p class="tag-switcher__item" {{on "click" (fn @onItemClick tag.name)}}>
+            {{tag.name}}
+        </p>
+    {{/each}}
+</section>
