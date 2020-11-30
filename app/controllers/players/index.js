@@ -52,16 +52,6 @@ export default class IndexController extends Controller {
         }
     ]
 
-    limitValues = [5, 10, 20, 50];
-
-    resetPage() {
-        this.page = 1;
-    }
-
-    movePage(amount) {
-        this.page += amount;
-    }
-
     @action
     chooseFilterField(selectedObject) {
         this.filterFieldContent = selectedObject.value;
@@ -126,30 +116,8 @@ export default class IndexController extends Controller {
     }
 
     @action
-    onPageClick(page) {
-        this.page = page;
-    }
-
-    @action
-    onPageArrowClick(amount) {
-        if (this.pageValues.length === 0) {
-            return;
-        }
-
-        if (this.page === 1 && amount === -1) {
-            return;
-        }
-
-        if (this.page === this.pageValues.length && amount === 1) {
-            return;
-        }
-
-        this.movePage(amount);
-    }
-
-    @action
-    onLimitClick(limit) {
-        this.limit = limit;
-        this.resetPage();
+    updatePaginationGroup(newPage, newLimit) {
+        this.page = newPage;
+        this.limit = newLimit;
     }
 }
