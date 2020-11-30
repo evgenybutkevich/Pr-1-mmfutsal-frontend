@@ -1,7 +1,7 @@
 .filter {
     display: flex;
     flex-direction: column;
-    padding: 5px;
+    padding: var(--elements-padding);
 }
 .filter .filter__item {
     display: flex;
@@ -20,17 +20,18 @@
     min-width: 300px;
     padding: 0 10px;
     border: none;
-    border-radius: 5px;
+    border-radius: var(--elements-border-radius);
+    color: var(--black);
     outline: none;
 }
 .filter .filter__item .ember-view .ember-power-select-selected-item {
     margin: 0;
+    color: var(--black);
     text-align: center;
 }
 .filter .filter__item.filter-buttons .filter-group-button {
     margin-right: 10px;
 }
-
 .ember-power-select-option {
-    background-color: white;
+    background-color: var(--white);
 }
