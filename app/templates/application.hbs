@@ -1,13 +1,7 @@
-<MenuSection />
+<section class={{this.themeClass}}>
+    <Header::Header @onThemeSwitcherClick={{this.onThemeSwitcherClick}} />
 
-<section class="grid-column grid-column-fixed grid-column-left">
-    <p>left</p>
-</section>
-
-<section class="wrapper wrapper-border wrapper-shadow">
-    {{outlet}}
-</section>
-
-<section class="grid-column grid-column-fixed grid-column-right">
-    <p>right</p>
+    <Page::Page @bestPlayers={{model.bestPlayers}}>
+        {{outlet}}
+    </Page::Page>
 </section>

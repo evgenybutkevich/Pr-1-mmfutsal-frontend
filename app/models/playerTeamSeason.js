@@ -4,36 +4,30 @@ import { validator, buildValidations } from 'ember-cp-validations';
 const Validations = buildValidations(
     {
         playerId: {
-            validators: [
-                validator('presence', true),
+            validators: [validator('presence', true),
                 validator('number', {
                     gt: 0,
                     integer: true,
-                    positive: true,
-                }),
-            ],
+                    positive: true
+                })]
         },
         teamId: {
-            validators: [
-                validator('presence', true),
+            validators: [validator('presence', true),
                 validator('number', {
                     gt: 0,
                     integer: true,
-                    positive: true,
-                }),
-            ],
+                    positive: true
+                })]
         },
         seasonId: {
-            validators: [
-                validator('presence', true),
+            validators: [validator('presence', true),
                 validator('number', {
                     gt: 0,
                     integer: true,
-                    positive: true,
-                }),
-            ],
-        },
-    },
+                    positive: true
+                })]
+        }
+    }
 );
 
 export default Model.extend(Validations, {
@@ -41,5 +35,5 @@ export default Model.extend(Validations, {
     teamId: attr('number'),
     seasonId: attr('number'),
     createdAt: attr('date'),
-    updatedAt: attr('date'),
+    updatedAt: attr('date')
 });

@@ -1,0 +1,16 @@
+:root {
+    --height-header: 60px;
+
+    --elements-border-radius: 5px;
+    --elements-distance: 20px;
+    --elements-padding: 5px;
+
+    --font-size-general: 15px;
+    --font-size-brand: 30px;
+    --font-size-title: 20px;
+    --font-size-input: 20px;
+    --font-weight-general: 400;
+    --font-weight-brand: 600;
+    --font-weight-menu: 600;
+    --font-weight-title: 600;
+}

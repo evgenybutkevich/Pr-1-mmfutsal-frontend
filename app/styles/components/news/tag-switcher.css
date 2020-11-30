@@ -1,0 +1,16 @@
+.tag-switcher {
+    display: flex;
+    justify-content: flex-start;
+    padding: var(--elements-padding);
+}
+.tag-switcher .tag-switcher__item {
+    border-radius: var(--elements-border-radius);
+    border: 1px solid var(--border-tag-switcher);
+    margin-right: 10px;
+    padding: 5px 15px;
+    transition: all 0.3s ease;
+}
+.tag-switcher .tag-switcher__item:hover {
+    cursor: pointer;
+    background-color: var(--background-color-tag-switcher-hover);
+}

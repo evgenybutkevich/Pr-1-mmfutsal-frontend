@@ -1,0 +1,36 @@
+.filter {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+}
+.filter .filter__item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    line-height: 1;
+}
+.filter .filter__item label {
+    min-width: 100px;
+}
+.filter .filter__item .ember-view {
+    display: flex;
+    align-items: center;
+    line-height: 20px;
+    min-height: 30px;
+    min-width: 300px;
+    padding: 0 10px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+.filter .filter__item .ember-view .ember-power-select-selected-item {
+    margin: 0;
+    text-align: center;
+}
+.filter .filter__item.filter-buttons .filter-group-button {
+    margin-right: 10px;
+}
+
+.ember-power-select-option {
+    background-color: white;
+}

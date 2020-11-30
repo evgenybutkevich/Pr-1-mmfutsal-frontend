@@ -1,0 +1,15 @@
+.theme-switcher {
+    display: flex;
+}
+.theme-switcher .theme-switcher__item.theme-switcher__2 > .theme-switcher__text, .theme-switcher .theme-switcher__item.theme-switcher__3 > .theme-switcher__text {
+    border-radius: var(--elements-border-radius);
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+.theme-switcher .theme-switcher__item.theme-switcher__2 > .theme-switcher__text:hover, .theme-switcher .theme-switcher__item.theme-switcher__3 > .theme-switcher__text:hover {
+    background-color: var(--background-color-menu-hover);
+    cursor: pointer;
+}
+.theme-switcher .theme-switcher__item .theme-switcher__text {
+    padding: 10px 15px;
+}

@@ -1,0 +1,8 @@
+<section class="panel panel__top">
+    <h1 class="panel__title">Best players of the week</h1>
+    <section class="panel__list">
+        {{#each @bestPlayers as |player|}}
+            <Page::Wrapper::PanelTop::Card @player={{player}} />
+        {{/each}}
+    </section>
+</section>

@@ -2,10 +2,8 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-
-    .error {
-        display: inline-flex;
-        color: red;
-        font-size: 15px;
-    }
+}
+.validated-data-group .error {
+    display: inline-flex;
+    color: red;
 }
